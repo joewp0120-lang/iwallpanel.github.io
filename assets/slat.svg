@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+<rect width="600" height="360" fill="#f0f4ff"/>
+<text x="40" y="80" fill="#0b1b2b" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Wood Slat Grille Panels</text>
+<text x="40" y="115" fill="#0b5bd3" font-size="18" font-family="Segoe UI, Arial">Modern lines · Acoustic core</text>
+<rect x="40" y="150" width="520" height="140" fill="#d6e2ff"/>
+<g fill="#b7d0ff">
+<rect x="50" y="160" width="30" height="120"/>
+<rect x="95" y="160" width="30" height="120"/>
+<rect x="140" y="160" width="30" height="120"/>
+<rect x="185" y="160" width="30" height="120"/>
+<rect x="230" y="160" width="30" height="120"/>
+<rect x="275" y="160" width="30" height="120"/>
+<rect x="320" y="160" width="30" height="120"/>
+<rect x="365" y="160" width="30" height="120"/>
+<rect x="410" y="160" width="30" height="120"/>
+<rect x="455" y="160" width="30" height="120"/>
+<rect x="500" y="160" width="30" height="120"/>
+</g>
+</svg>
+

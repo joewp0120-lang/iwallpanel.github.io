@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+<rect width="600" height="360" fill="#f7fbff"/>
+<text x="40" y="80" fill="#0b1b2b" font-size="26" font-family="Segoe UI, Arial" font-weight="700">3D Decorative Panels</text>
+<text x="40" y="115" fill="#0b5bd3" font-size="18" font-family="Segoe UI, Arial">Hexagon · Geometric</text>
+<g fill="#cfe0ff">
+<polygon points="110,170 140,150 170,170 170,205 140,225 110,205"/>
+<polygon points="170,170 200,150 230,170 230,205 200,225 170,205"/>
+<polygon points="230,170 260,150 290,170 290,205 260,225 230,205"/>
+</g>
+</svg>
+

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0f2338"/>
+<stop offset="0.6" stop-color="#163a5b"/>
+<stop offset="1" stop-color="#0f2338"/>
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="1200" height="420" fill="url(#g)"/>
+<text x="48" y="120" fill="#ffffff" font-size="36" font-family="Segoe UI, Arial" font-weight="700">Eco-Friendly Acoustic Wall Panels</text>
+<text x="48" y="170" fill="#cfe0ff" font-size="20" font-family="Segoe UI, Arial">Soundproof · Waterproof · Easy Installation</text>
+<rect x="48" y="220" width="220" height="46" rx="8" fill="#1e78ff"/>
+<text x="64" y="250" fill="#ffffff" font-size="18" font-family="Segoe UI, Arial">Get Free Quote</text>
+<rect x="280" y="220" width="220" height="46" rx="8" fill="#ffffff" stroke="#ffffff" opacity="0.15"/>
+<text x="300" y="250" fill="#ffffff" font-size="18" font-family="Segoe UI, Arial">Request Sample</text>
+</svg>
+

@@ -1,0 +1,7 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f0f0f0"/>
+  <rect x="200" y="150" width="400" height="300" rx="20" fill="#e0e0e0"/>
+  <circle cx="400" cy="300" r="100" fill="#d0d0d0"/>
+  <text x="400" y="500" font-family="Arial" font-size="24" text-anchor="middle" fill="#888">PET Acoustic Panel</text>
+  <path d="M350 300 Q400 250 450 300 T550 300" stroke="#999" stroke-width="5" fill="none"/>
+</svg>
