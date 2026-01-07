@@ -94,19 +94,19 @@
       btn.textContent = 'Sending...';
       var hint = document.getElementById('quoteSendingHint');
       if (hint) hint.style.display = 'block';
+      // Immediate redirect
+      setTimeout(function() {
+        window.location.href = nextUrl;
+      }, 100);
+
       var fd = new FormData(form);
+      // Background submission
       fetch('https://formsubmit.co/ajax/joewp0120@gmail.com', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: fd
-      }).then(function(res){
-        if (res.ok) {
-          window.location.href = nextUrl;
-        } else {
-          form.submit();
-        }
       }).catch(function(){
-        form.submit();
+        // no-op
       });
     });
   })();
