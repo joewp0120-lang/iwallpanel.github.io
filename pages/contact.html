@@ -24,6 +24,7 @@
   button { padding: 12px 24px; background: #1e78ff; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
   button:hover { background: #0069d9; }
   .contact-info { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; }
+  .sending { margin-top: 12px; color: #1e78ff; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -58,6 +59,7 @@
   <input type="hidden" name="_next" id="hiddenNext" value="">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
+  <div id="sendingHint" class="sending" style="display:none;">Sending your request...</div>
 </form>
 
 <div class="contact-info">
@@ -87,7 +89,26 @@
       if (hiddenSubject) hiddenSubject.value = '[iwallpanel] ' + type + ' from ' + (name || 'Customer');
       if (hiddenNext) hiddenNext.value = nextUrl;
       var form = document.getElementById('contactForm');
-      if (form) form.submit();
+      var hint = document.getElementById('sendingHint');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      if (hint) hint.style.display = 'block';
+      if (form) {
+        var fd = new FormData(form);
+        fetch('https://formsubmit.co/ajax/joewp0120@gmail.com', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: fd
+        }).then(function(res){
+          if (res.ok) {
+            window.location.href = nextUrl;
+          } else {
+            form.submit();
+          }
+        }).catch(function(){
+          form.submit();
+        });
+      }
     });
   })();
 </script>

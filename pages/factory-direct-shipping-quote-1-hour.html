@@ -14,6 +14,10 @@
   .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 40px; }
   .feature-box { padding: 24px; background: #f9fafb; border-radius: 12px; }
   .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; display: inline-block; background: #1e78ff; color: #fff; }
+  .form-group { margin-bottom: 16px; }
+  label { display: block; margin-bottom: 8px; font-weight: 500; }
+  input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
+  .sending { margin-top: 12px; color: #1e78ff; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -38,9 +42,73 @@
   </div>
 </div>
 
-<a class="btn" href="mailto:Joewp0120@gmail.com?subject=%5Biwallpanel%5D%20Quote%20Request%20(1-Hour)%20&body=Please%20provide%20a%20quotation%20for%20the%20following%20items.%0A%0AName%3A%20%0AEmail%3A%20%0ACompany%3A%20%0AProject%20City%2FCountry%3A%20%0AProducts%20and%20Qty%3A%20%0ATarget%20Timeline%3A%20%0ANotes%3A%20" onclick="setTimeout(function(){ location.href='/pages/thank-you.html?type='+encodeURIComponent('Request Quote')+'&source=quote-1hour'; }, 600)">Get Your Quote Now</a>
+<form id="quoteForm" action="https://formsubmit.co/joewp0120@gmail.com" method="POST">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" name="name" placeholder="Your Name" required>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" placeholder="your@email.com" required>
+  </div>
+  <div class="form-group">
+    <label>Company</label>
+    <input type="text" name="company" placeholder="Company Name">
+  </div>
+  <div class="form-group">
+    <label>Project City / Country</label>
+    <input type="text" name="project_location" placeholder="e.g., Dubai, AE" required>
+  </div>
+  <div class="form-group">
+    <label>Products and Qty</label>
+    <textarea name="products_qty" rows="3" placeholder="e.g., PET panels 150 m²; Grille panels 80 m²" required></textarea>
+  </div>
+  <div class="form-group">
+    <label>Target Timeline</label>
+    <input type="text" name="timeline" placeholder="e.g., Ship by March 2026">
+  </div>
+  <div class="form-group">
+    <label>Notes</label>
+    <textarea name="notes" rows="4" placeholder="Other requirements or questions"></textarea>
+  </div>
+  <input type="hidden" name="_subject" value="[iwallpanel] Quote Request (1-Hour)">
+  <input type="hidden" name="_next" value="/pages/thank-you.html?type=Request%20Quote&source=quote-1hour">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <button id="quoteSendBtn" type="button" class="btn">Get Your Quote Now</button>
+  <div id="quoteSendingHint" class="sending" style="display:none;">Sending your request...</div>
+</form>
 <br><br>
 <a href="/index.html">← Back to Home</a>
 </main>
 </body>
+<script>
+  (function () {
+    var btn = document.getElementById('quoteSendBtn');
+    var form = document.getElementById('quoteForm');
+    if (!btn || !form) return;
+    btn.addEventListener('click', function () {
+      var nextInputs = form.querySelector('input[name=\"_next\"]');
+      var nextUrl = nextInputs ? nextInputs.value : '/pages/thank-you.html?type=Request%20Quote&source=quote-1hour';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      var hint = document.getElementById('quoteSendingHint');
+      if (hint) hint.style.display = 'block';
+      var fd = new FormData(form);
+      fetch('https://formsubmit.co/ajax/joewp0120@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd
+      }).then(function(res){
+        if (res.ok) {
+          window.location.href = nextUrl;
+        } else {
+          form.submit();
+        }
+      }).catch(function(){
+        form.submit();
+      });
+    });
+  })();
+</script>
 </html>
