@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank You | SJSG decorative material Co., Ltd</title>
+<meta name="description" content="Thank you for your inquiry. Our team will respond promptly and provide professional assistance.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:title" content="Thank You | SJSG decorative material Co., Ltd">
+<meta property="og:description" content="We have received your request. Expect a response within 1 hour during business hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.iwallpanel.com/pages/thank-you.html">
+<link rel="canonical" href="https://www.iwallpanel.com/pages/thank-you.html">
+<style>
+  body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #111; background: #f7fafc; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; text-align: center; }
+  h1 { font-size: 2rem; margin: 0 0 12px; }
+  p { color: #555; }
+  .info { margin-top: 20px; color: #333; }
+  .actions { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; display: inline-block; }
+  .btn-primary { background: #1e78ff; color: #fff; }
+  .btn-outline { border: 1px solid #1e78ff; color: #1e78ff; }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>Thank You</h1>
+    <p id="desc">We have received your request. Our team will respond soon.</p>
+    <div class="info">
+      <div>Email: Joewp0120@gmail.com</div>
+      <div>WhatsApp: 86-15622516228</div>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="/pages/products/index.html">Explore Products</a>
+      <a class="btn btn-outline" href="/index.html">Back to Home</a>
+      <a class="btn btn-outline" href="/pages/contact.html">Contact Again</a>
+    </div>
+  </div>
+</main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.iwallpanel.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Thank You", "item": "https://www.iwallpanel.com/pages/thank-you.html" }
+  ]
+}
+</script>
+<script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var type = params.get('type') || '';
+    var map = {
+      'Request Quote': 'Your quote request has been noted. Expect a response within 1 hour during business hours.',
+      'Free Sample': 'Your free sample request has been received. We will arrange shipment details with you.',
+      'Technical Support': 'Your support request has been received. Our engineer will assist you shortly.',
+      'Become a Distributor': 'Thanks for your interest in partnership. Our sales team will reach out soon.'
+    };
+    var text = map[type] || 'We have received your request. Our team will respond soon.';
+    var el = document.getElementById('desc');
+    if (el) el.textContent = text;
+  })();
+</script>
+</body>
+</html>

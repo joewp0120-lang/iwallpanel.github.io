@@ -31,18 +31,18 @@
 <h1>Contact Us</h1>
 <p>Fill out the form below to get a quote or request information. We typically respond within 1 hour during business hours.</p>
 
-<form id="contactForm">
+<form id="contactForm" action="https://formsubmit.co/joewp0120@gmail.com" method="POST">
   <div class="form-group">
     <label>Name</label>
-    <input id="name" type="text" placeholder="Your Name">
+    <input id="name" name="name" type="text" placeholder="Your Name" required>
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input id="email" type="email" placeholder="your@email.com">
+    <input id="email" name="email" type="email" placeholder="your@email.com" required>
   </div>
   <div class="form-group">
     <label>Inquiry Type</label>
-    <select id="type">
+    <select id="type" name="type">
       <option value="Request Quote">Request Quote</option>
       <option value="Free Sample">Free Sample</option>
       <option value="Technical Support">Technical Support</option>
@@ -51,9 +51,13 @@
   </div>
   <div class="form-group">
     <label>Message</label>
-    <textarea id="message" rows="5" placeholder="Tell us about your project..."></textarea>
+    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
   </div>
   <button id="sendBtn" type="button">Send Message</button>
+  <input type="hidden" name="_subject" id="hiddenSubject" value="">
+  <input type="hidden" name="_next" id="hiddenNext" value="">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 </form>
 
 <div class="contact-info">
@@ -77,17 +81,13 @@
       var type = document.getElementById('type') ? document.getElementById('type').value : 'Request Quote';
       var msg = document.getElementById('message') ? document.getElementById('message').value.trim() : '';
       var subject = encodeURIComponent('[iwallpanel] ' + type + ' from ' + (name || 'Customer'));
-      var bodyLines = [
-        'Name: ' + (name || ''),
-        'Email: ' + (email || ''),
-        'Type: ' + type,
-        '',
-        'Message:',
-        msg || ''
-      ];
-      var body = encodeURIComponent(bodyLines.join('\n'));
-      var mailto = 'mailto:Joewp0120@gmail.com?subject=' + subject + '&body=' + body;
-      window.location.href = mailto;
+      var nextUrl = '/pages/thank-you.html?type=' + encodeURIComponent(type) + '&source=contact';
+      var hiddenSubject = document.getElementById('hiddenSubject');
+      var hiddenNext = document.getElementById('hiddenNext');
+      if (hiddenSubject) hiddenSubject.value = '[iwallpanel] ' + type + ' from ' + (name || 'Customer');
+      if (hiddenNext) hiddenNext.value = nextUrl;
+      var form = document.getElementById('contactForm');
+      if (form) form.submit();
     });
   })();
 </script>
