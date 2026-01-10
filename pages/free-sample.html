@@ -26,8 +26,19 @@
   input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
   .sending { margin-top: 12px; color: #1e78ff; font-size: 14px; }
   /* Language Switcher */
-  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
-  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
+  .lang-select { 
+    position: absolute; 
+    top: 10px; 
+    right: 20px; 
+    z-index: 1000; 
+    background: #fff; 
+    border: 1px solid #ddd; 
+    padding: 6px; 
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+  }
 </style>
 </head>
 <body>
@@ -120,10 +131,24 @@
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
-      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      includedLanguages: 'en,hi,es,fr,ar,bn,pt,ru,ja',
+      autoDisplay: false
     }, 'google_translate_element');
   }
+  
+  function translateLanguage(lang) {
+    document.cookie = "googtrans=/en/" + lang + "; path=/";
+    location.reload();
+  }
+
+  window.addEventListener('load', function() {
+    var match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+    if(match) {
+      var lang = match[1];
+      var sel = document.querySelector('.lang-select');
+      if(sel) sel.value = lang;
+    }
+  });
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
