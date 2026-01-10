@@ -19,9 +19,13 @@
   .specs li { padding: 8px 0; border-bottom: 1px solid #e5e7eb; }
   .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; display: inline-block; }
   .btn-primary { background: #1e78ff; color: #fff; }
+  /* Language Switcher */
+  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
+  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
 </style>
 </head>
 <body>
+<div id="google_translate_element"></div>
 <main>
 <h1>PET Acoustic Panels</h1>
 <p class="intro">Sustainable soundproofing solutions made from recycled polyester fiber. Perfect for offices, studios, and commercial spaces requiring superior acoustic control.</p>
@@ -53,6 +57,7 @@
     <li><strong>Thickness:</strong> 9mm, 12mm, 24mm</li>
     <li><strong>Dimensions:</strong> 2420mm x 1220mm (Customizable)</li>
     <li><strong>Price:</strong> $9-22/CBM (MOQ 100 CBM)</li>
+    <li><strong>Lead Time:</strong> 3-7 Days</li>
   </ul>
 </div>
 
@@ -60,5 +65,15 @@
 <br><br>
 <a href="/pages/products/index.html">← Back to All Products</a>
 </main>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>

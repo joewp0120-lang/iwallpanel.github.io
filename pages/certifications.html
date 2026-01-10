@@ -21,9 +21,13 @@
   .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; }
   .cert-card { border: 1px solid #eee; padding: 24px; border-radius: 8px; text-align: center; }
   .cert-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+  /* Language Switcher */
+  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
+  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
 </style>
 </head>
 <body>
+<div id="google_translate_element"></div>
 <main>
 <h1>Certifications & Standards</h1>
 <p>We adhere to strict international standards to ensure our products are safe, durable, and environmentally friendly.</p>
@@ -60,5 +64,15 @@
   ]
 }
 </script>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>

@@ -33,9 +33,13 @@
   .btn-secondary { background: #fff; color: #1e78ff; border: 1px solid #e5e7eb; }
   .back-link { display: inline-block; margin-top: 24px; color: #6b7280; text-decoration: none; }
   .back-link:hover { color: #111; }
+  /* Language Switcher */
+  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
+  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
 </style>
 </head>
 <body>
+<div id="google_translate_element"></div>
 <main>
 <h1>Our Products</h1>
 <div class="grid">
@@ -45,6 +49,7 @@
       <p class="card-title"><a href="/pages/products/pet-acoustic-panels.html">PET Acoustic Panels</a></p>
       <p class="card-desc">Recycled PET · NRC 0.8+ · Eco-friendly</p>
       <p class="card-price" style="margin-top:8px;font-weight:bold;color:#1e78ff;">$9-22/CBM (MOQ 100 CBM)</p>
+      <p class="card-lead" style="margin-top:4px;font-size:0.9rem;color:#666;">Lead Time: 3-7 Days</p>
     </div>
   </div>
   <div class="card">
@@ -53,6 +58,7 @@
       <p class="card-title"><a href="/pages/products/grille-slat-panels.html">Grille / Slat Panels</a></p>
       <p class="card-desc">Modern wood lines · Acoustic core · Elegant finish</p>
       <p class="card-price" style="margin-top:8px;font-weight:bold;color:#1e78ff;">$2-4.5/CBM (MOQ 100 CBM)</p>
+      <p class="card-lead" style="margin-top:4px;font-size:0.9rem;color:#666;">Lead Time: 3-7 Days</p>
     </div>
   </div>
   <div class="card">
@@ -61,6 +67,7 @@
       <p class="card-title"><a href="/pages/products/pvc-wall-panels.html">PVC Wall Panels</a></p>
       <p class="card-desc">Waterproof · Durable · Marble/Wood textures</p>
       <p class="card-price" style="margin-top:8px;font-weight:bold;color:#1e78ff;">$9-18/CBM (MOQ 100 CBM)</p>
+      <p class="card-lead" style="margin-top:4px;font-size:0.9rem;color:#666;">Lead Time: 3-7 Days</p>
     </div>
   </div>
   <div class="card">
@@ -69,6 +76,7 @@
       <p class="card-title"><a href="/pages/products/3d-decorative-panels.html">3D Decorative Panels</a></p>
       <p class="card-desc">Geometric designs · Visual impact · Lightweight</p>
       <p class="card-price" style="margin-top:8px;font-weight:bold;color:#1e78ff;">$25-50/CBM (MOQ 50 CBM)</p>
+      <p class="card-lead" style="margin-top:4px;font-size:0.9rem;color:#666;">Lead Time: 3-7 Days</p>
     </div>
   </div>
   <div class="card">
@@ -77,6 +85,7 @@
       <p class="card-title"><a href="/pages/products/carbon-crystal-panels.html">Carbon Crystal Panels</a></p>
       <p class="card-desc">High-tech composite · Premium decorative solutions</p>
       <p class="card-price" style="margin-top:8px;font-weight:bold;color:#1e78ff;">$13-17/CBM (MOQ 100 CBM)</p>
+      <p class="card-lead" style="margin-top:4px;font-size:0.9rem;color:#666;">Lead Time: 3-7 Days</p>
     </div>
   </div>
   <div class="card">
@@ -85,6 +94,7 @@
       <p class="card-title"><a href="/pages/products/background-wall-panels.html">Background Wall Panels</a></p>
       <p class="card-desc">Feature walls for TV, bedroom, and office</p>
       <p class="card-price" style="margin-top:8px;font-weight:bold;color:#1e78ff;">$25-50/CBM (MOQ 50 CBM)</p>
+      <p class="card-lead" style="margin-top:4px;font-size:0.9rem;color:#666;">Lead Time: 3-7 Days</p>
     </div>
   </div>
 </div>
@@ -104,5 +114,15 @@
 </div>
 <a class="back-link" href="/index.html">← Back to Home</a>
 </main>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>

@@ -25,9 +25,13 @@
   button:hover { background: #0069d9; }
   .contact-info { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; }
   .sending { margin-top: 12px; color: #1e78ff; font-size: 14px; }
+  /* Language Switcher */
+  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
+  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
 </style>
 </head>
 <body>
+<div id="google_translate_element"></div>
 <main>
 <h1>Contact Us</h1>
 <p>Fill out the form below to get a quote or request information. We typically respond within 1 hour during business hours.</p>
@@ -72,6 +76,16 @@
 <br>
 <a href="/index.html">← Back to Home</a>
 </main>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 <script>
   (function () {

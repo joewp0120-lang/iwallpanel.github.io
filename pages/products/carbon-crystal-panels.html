@@ -13,9 +13,13 @@
   .hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; margin-bottom: 32px; }
   .specs { background: #f9fafb; padding: 24px; border-radius: 12px; margin-bottom: 32px; }
   .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; display: inline-block; background: #1e78ff; color: #fff; }
+  /* Language Switcher */
+  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
+  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
 </style>
 </head>
 <body>
+<div id="google_translate_element"></div>
 <main>
 <h1>Carbon Crystal Panels</h1>
 <p class="intro">Experience the latest in wall technology. Bamboo wood fiber integrated with carbon crystal powder for superior hardness and environmental safety.</p>
@@ -30,6 +34,7 @@
     <li><strong>Versatile:</strong> Suitable for whole-house customization.</li>
     <li><strong>Waterproof & Fireproof:</strong> Excellent performance in all conditions.</li>
     <li><strong>Price:</strong> $13-17/CBM (MOQ 100 CBM)</li>
+    <li><strong>Lead Time:</strong> 3-7 Days</li>
   </ul>
 </div>
 
@@ -37,5 +42,15 @@
 <br><br>
 <a href="/pages/products/index.html">← Back to All Products</a>
 </main>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>

@@ -13,9 +13,13 @@
   .hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; margin-bottom: 32px; }
   .specs { background: #f9fafb; padding: 24px; border-radius: 12px; margin-bottom: 32px; }
   .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; display: inline-block; background: #1e78ff; color: #fff; }
+  /* Language Switcher */
+  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
+  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
 </style>
 </head>
 <body>
+<div id="google_translate_element"></div>
 <main>
 <h1>3D Decorative Panels</h1>
 <p class="intro">Create stunning feature walls with our 3D panels. The play of light and shadow brings any surface to life.</p>
@@ -30,6 +34,7 @@
     <li><strong>Paintable:</strong> Can be painted to match any color scheme.</li>
     <li><strong>Impact:</strong> Creates an immediate visual focal point.</li>
     <li><strong>Price:</strong> $25-50/CBM (MOQ 50 CBM)</li>
+    <li><strong>Lead Time:</strong> 3-7 Days</li>
   </ul>
 </div>
 
@@ -37,5 +42,15 @@
 <br><br>
 <a href="/pages/products/index.html">← Back to All Products</a>
 </main>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>
