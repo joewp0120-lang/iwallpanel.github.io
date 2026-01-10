@@ -18,10 +18,17 @@
   body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #333; }
   main { max-width: 1120px; margin: 0 auto; padding: 24px; }
   h1 { font-size: 2rem; margin-bottom: 24px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-  .card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; }
-  .card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-  .card-content { padding: 16px; }
+  .article-list { display: grid; gap: 24px; }
+  .article-item { display: flex; gap: 24px; border: 1px solid #eee; border-radius: 12px; overflow: hidden; padding: 16px; align-items: center; }
+  .article-img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+  .article-content h2 { margin: 0 0 8px; font-size: 1.25rem; }
+  .article-content h2 a { text-decoration: none; color: #111; }
+  .article-content h2 a:hover { color: #1e78ff; }
+  .article-meta { font-size: 0.9rem; color: #666; margin-bottom: 8px; }
+  /* Page Header Banner */
+  .page-header { background-color: var(--bg); color: #fff; padding: 60px 24px; text-align: center; margin-bottom: 40px; }
+  .page-header h1 { margin: 0 0 16px; font-size: 3rem; color: #fff; }
+  .page-header p { font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto; color: #cfe0ff; }
   /* Standard Layout CSS */
   :root{--bg:#0b1b2b;--primary:#0b5bd3;--text:#111;--muted:#6b7280;--card:#ffffff;--border:#e5e7eb}
   header{padding:0;background:var(--bg);color:#fff}
@@ -29,8 +36,19 @@
   .brand{font-weight:700;letter-spacing:.2px;font-size:1.2rem}
   nav a{color:#cfe0ff;margin:0 10px;text-decoration:none;font-size:14px}
   nav a:hover{color:#fff;text-decoration:underline}
-  footer{padding:24px;background:#f7f7f7;color:#333;text-align:center;margin-top:40px;border-top:1px solid #eee}
-  footer p{margin:8px 0;font-size:0.9rem;color:#666}
+  /* Footer Styles */
+  footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe UI',Roboto,Arial,sans-serif;text-align:left;border-top:none;margin-top:0}
+  .footer-container{display:flex;justify-content:space-around;max-width:1200px;margin:0 auto;flex-wrap:wrap;padding:0 20px}
+  .footer-section{flex:1;min-width:250px;margin-bottom:20px;padding:0 15px}
+  .footer-section h3{color:#fff;font-size:18px;margin-bottom:15px;border-bottom:2px solid #1e78ff;display:inline-block;padding-bottom:5px;font-weight:600}
+  .footer-section p{color:#ccc;font-size:14px;line-height:1.6;margin-bottom:10px;margin-top:0}
+  .footer-section ul{list-style:none;padding:0;margin:0}
+  .footer-section ul li{margin-bottom:8px}
+  .footer-section ul li a{color:#ccc;text-decoration:none;font-size:14px;transition:color 0.3s}
+  .footer-section ul li a:hover{color:#fff;text-decoration:underline}
+  .footer-contact-item{display:flex;align-items:flex-start;margin-bottom:10px;color:#ccc;font-size:14px}
+  .footer-contact-item span{margin-right:10px;font-size:16px}
+  .copyright{text-align:center;border-top:1px solid rgba(255,255,255,0.1);margin-top:20px;padding-top:20px;font-size:13px;color:#888}
   /* Language Switcher */
   .lang-select { margin-left: 20px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 6px; border-radius: 4px; cursor: pointer; font-size: 14px; }
   .lang-select option { color: #333; }
@@ -70,30 +88,35 @@
   </div>
 </div>
 </header>
+<div class="page-header">
+  <h1>Applications</h1>
+  <p>Serving Diverse Industries with Specialized Solutions</p>
+</div>
 <main>
-<h1>Applications</h1>
-<p>Our diverse product range suits a wide variety of environments.</p>
 
-<div class="grid">
-  <div class="card">
-    <img src="../../assets/product-wood.jpg" alt="Commercial" loading="lazy" decoding="async" width="1200" height="800">
-    <div class="card-content">
-      <h3>Commercial & Office</h3>
-      <p>Meeting rooms, lobbies, workspaces.</p>
+<div class="article-list">
+  <div class="article-item">
+    <img src="../../assets/product-wood.jpg" class="article-img" alt="Commercial" loading="lazy" decoding="async">
+    <div class="article-content">
+      <h2><a href="#">Commercial & Office</a></h2>
+      <div class="article-meta">Professional Spaces</div>
+      <p>Acoustic solutions for meeting rooms, lobbies, and workspaces.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="../../assets/product-pvc.jpg" alt="Residential" loading="lazy" decoding="async" width="1200" height="800">
-    <div class="card-content">
-      <h3>Residential</h3>
-      <p>Living rooms, bedrooms, home theaters.</p>
+  <div class="article-item">
+    <img src="../../assets/product-pvc.jpg" class="article-img" alt="Residential" loading="lazy" decoding="async">
+    <div class="article-content">
+      <h2><a href="#">Residential</a></h2>
+      <div class="article-meta">Home Design</div>
+      <p>Elegant wall panels for living rooms, bedrooms, and home theaters.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="../../assets/product-3d.jpg" alt="Hospitality" loading="lazy" decoding="async" width="1200" height="800">
-    <div class="card-content">
-      <h3>Hospitality</h3>
-      <p>Hotels, restaurants, cafes.</p>
+  <div class="article-item">
+    <img src="../../assets/product-3d.jpg" class="article-img" alt="Hospitality" loading="lazy" decoding="async">
+    <div class="article-content">
+      <h2><a href="#">Hospitality</a></h2>
+      <div class="article-meta">Hotels & Restaurants</div>
+      <p>Durable and aesthetic designs for hotels, restaurants, and cafes.</p>
     </div>
   </div>
 </div>

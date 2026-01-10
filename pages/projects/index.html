@@ -21,6 +21,10 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
   .card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; }
   .card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+  /* Page Header Banner */
+  .page-header { background-color: var(--bg); color: #fff; padding: 60px 24px; text-align: center; margin-bottom: 40px; }
+  .page-header h1 { margin: 0 0 16px; font-size: 3rem; color: #fff; }
+  .page-header p { font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto; color: #cfe0ff; }
   /* Standard Layout CSS */
   :root{--bg:#0b1b2b;--primary:#0b5bd3;--text:#111;--muted:#6b7280;--card:#ffffff;--border:#e5e7eb}
   header{padding:0;background:var(--bg);color:#fff}
@@ -69,30 +73,35 @@
   </div>
 </div>
 </header>
+<div class="page-header">
+  <h1>Projects</h1>
+  <p>Global Success Stories: Transforming Spaces with Innovation</p>
+</div>
 <main>
-<h1>Project Gallery</h1>
-<p>See how our clients have transformed their spaces.</p>
 
-<div class="grid">
-  <div class="card">
-    <img src="../../assets/project-office.jpg" alt="Office Project" loading="lazy" decoding="async" width="1200" height="800">
-    <div class="card-content">
-      <h3>Tech Office HQ</h3>
-      <p>Modern acoustic solutions for open-plan workspace.</p>
+<div class="article-list">
+  <div class="article-item">
+    <img src="../../assets/project-office.jpg" class="article-img" alt="Office Project" loading="lazy" decoding="async">
+    <div class="article-content">
+      <h2><a href="#">Tech Office HQ</a></h2>
+      <div class="article-meta">Corporate</div>
+      <p>Modern acoustic solutions for an open-plan workspace.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="../../assets/project-hotel.jpg" alt="Hotel Lobby" loading="lazy" decoding="async" width="1200" height="800">
-    <div class="card-content">
-      <h3>Luxury Hotel Lobby</h3>
-      <p>Wood slat and marble PVC combination.</p>
+  <div class="article-item">
+    <img src="../../assets/project-hotel.jpg" class="article-img" alt="Hotel Lobby" loading="lazy" decoding="async">
+    <div class="article-content">
+      <h2><a href="#">Luxury Hotel Lobby</a></h2>
+      <div class="article-meta">Hospitality</div>
+      <p>Elegant wood slat and marble PVC combination for a grand entrance.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="../../assets/project-studio.jpg" alt="Home Studio" loading="lazy" decoding="async" width="1200" height="800">
-    <div class="card-content">
-      <h3>Recording Studio</h3>
-      <p>High-performance PET acoustic treatment.</p>
+  <div class="article-item">
+    <img src="../../assets/project-studio.jpg" class="article-img" alt="Home Studio" loading="lazy" decoding="async">
+    <div class="article-content">
+      <h2><a href="#">Recording Studio</a></h2>
+      <div class="article-meta">Specialized Acoustic</div>
+      <p>High-performance PET acoustic treatment for professional sound quality.</p>
     </div>
   </div>
 </div>
