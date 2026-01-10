@@ -9,8 +9,8 @@
 <meta property="og:title" content="SJSG decorative material Co., Ltd | Acoustic & Decorative Wall Panels">
 <meta property="og:description" content="50% lighter than pine with 2x lifespan, zero rust corrosion, unified fiber grates, 72-hour customization, factory direct shipping.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.iwallpanel.com/">
-<link rel="canonical" href="https://www.iwallpanel.com/">
+<meta property="og:url" content="https://iwallpanel.com/">
+<link rel="canonical" href="https://iwallpanel.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SJSG decorative material Co., Ltd | Acoustic & Decorative Wall Panels">
 <meta name="twitter:description" content="Eco-friendly acoustic & decorative wall panels. PET & PVC panels, slat grille designs, corrosion-free materials, 72-hour customization, factory direct pricing.">
@@ -30,22 +30,190 @@ h1{margin:0 0 8px;font-size:32px}
 .actions{margin-top:16px}
 .btn{display:inline-block;padding:10px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;margin-right:10px;background:rgba(255,255,255,.08)}
 .btn.primary{background:#1e78ff;border-color:#1e78ff}
-main{padding:32px 24px;max-width:1120px;margin:0 auto}
-section{margin-bottom:32px}
-section h2{font-size:22px;margin:0 0 12px}
+main{padding:60px 24px;max-width:1200px;margin:0 auto}
+section{margin-bottom:80px}
+section h2{font-size:32px;margin:0 0 40px;text-align:center;color:var(--bg)}
 section a{color:var(--primary);text-decoration:none}
 section a:hover{text-decoration:underline}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
-.card-media{height:140px;background:linear-gradient(135deg,#e6f0ff,#f7fbff)}
-.card-body{padding:12px}
-.card-title{margin:0 0 6px;font-weight:600}
-.card-text{margin:0;color:var(--muted);font-size:14px}
-.badge{display:inline-block;background:#eef3ff;color:#0b5bd3;padding:2px 8px;border-radius:12px;font-size:12px;margin-left:6px}
+
+/* Grid Systems */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+/* Advantage Card */
+.adv-card {
+  background: #f8faff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid #eef2ff;
+}
+.adv-card:hover {
+  transform: translateY(-5px);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(11, 27, 43, 0.08);
+  border-color: var(--primary);
+}
+.adv-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: block;
+}
+.adv-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--bg);
+  font-size: 18px;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-color: var(--primary);
+}
+.product-img-wrap {
+  overflow: hidden;
+  height: 240px;
+  background: #f5f5f5;
+}
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.product-card:hover .product-img {
+  transform: scale(1.1);
+}
+.product-content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-title {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.product-title a {
+  color: var(--bg);
+  text-decoration: none;
+}
+.product-title a:hover {
+  color: var(--primary);
+}
+.product-desc {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 24px;
+  flex: 1;
+  line-height: 1.6;
+}
+.product-link {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+}
+.product-link:after {
+  content: '→';
+  margin-left: 6px;
+  transition: transform 0.2s;
+}
+.product-card:hover .product-link:after {
+  transform: translateX(4px);
+}
+
+/* Blog Card */
+.blog-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: var(--primary);
+}
+.blog-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.blog-date {
+  font-size: 13px;
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.blog-title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.blog-title a {
+  color: var(--bg);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.blog-title a:hover {
+  color: var(--primary);
+}
+.blog-excerpt {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 24px;
+  line-height: 1.7;
+  flex: 1;
+}
+.read-more {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.read-more:hover {
+  border-bottom-color: var(--primary);
+  text-decoration: none;
+}
 .cta{margin-top:24px;padding:16px;border:1px solid var(--border);border-radius:10px;background:#fafafa}
 .hero-contact{margin-top:20px;margin-bottom:20px;background:#fff8e1;color:#bf360c;padding:12px 20px;border-radius:8px;display:inline-block;font-weight:bold;font-size:18px;border:2px solid #ff6f00}
-footer{padding:24px;background:#f7f7f7;color:#333}
-ul{padding-left:18px}
   /* Language Switcher */
   .lang-select { 
     margin-left: 20px; 
@@ -57,7 +225,22 @@ ul{padding-left:18px}
     cursor: pointer;
     font-size: 14px;
   }
-  .lang-select option { color: #333; } /* Options need dark text on white bg usually */
+  .lang-select option { color: #333; }
+  ul{padding-left:18px}
+  
+  /* Footer Styles */
+  footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe UI',Roboto,Arial,sans-serif;text-align:left;border-top:none;margin-top:0}
+  .footer-container{display:flex;justify-content:space-around;max-width:1200px;margin:0 auto;flex-wrap:wrap;padding:0 20px}
+  .footer-section{flex:1;min-width:250px;margin-bottom:20px;padding:0 15px}
+  .footer-section h3{color:#fff;font-size:18px;margin-bottom:15px;border-bottom:2px solid #1e78ff;display:inline-block;padding-bottom:5px;font-weight:600}
+  .footer-section p{color:#ccc;font-size:14px;line-height:1.6;margin-bottom:10px;margin-top:0}
+  .footer-section ul{list-style:none;padding:0;margin:0}
+  .footer-section ul li{margin-bottom:8px}
+  .footer-section ul li a{color:#ccc;text-decoration:none;font-size:14px;transition:color 0.3s}
+  .footer-section ul li a:hover{color:#fff;text-decoration:underline}
+  .footer-contact-item{display:flex;align-items:flex-start;margin-bottom:10px;color:#ccc;font-size:14px}
+  .footer-contact-item span{margin-right:10px;font-size:16px}
+  .copyright{text-align:center;border-top:1px solid rgba(255,255,255,0.1);margin-top:20px;padding-top:20px;font-size:13px;color:#888}
 
 </style>
 <script type="application/ld+json">
@@ -65,8 +248,8 @@ ul{padding-left:18px}
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "SJSG decorative material Co., Ltd",
-  "url": "https://www.iwallpanel.com",
-  "logo": "https://www.iwallpanel.com/logo.png"
+  "url": "https://iwallpanel.com",
+  "logo": "https://iwallpanel.com/logo.png"
 }
 </script>
 <script type="application/ld+json">
@@ -74,7 +257,7 @@ ul{padding-left:18px}
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "SJSG decorative material Co., Ltd",
-  "url": "https://www.iwallpanel.com",
+  "url": "https://iwallpanel.com",
   "inLanguage": "en"
 }
 </script>
@@ -123,81 +306,161 @@ ul{padding-left:18px}
 </header>
 <main>
 <section>
-<h2>Key Advantages</h2>
-<ul>
-<li>Eco-Friendly (E0 Grade)</li>
-<li>Superior Sound Insulation</li>
-<li>Fast Installation</li>
-<li>Customizable Designs</li>
-<li>Sustainable Materials</li>
-<li>Factory Direct Pricing</li>
-</ul>
-</section>
-<section>
-<h2>Popular Products</h2>
-<div class="grid">
-  <div class="card">
-    <div class="card-media">
-      <img src="assets/product-pet.jpg" alt="PET Acoustic Panels" style="width:100%;height:100%;object-fit:cover;" width="1200" height="800">
+  <h2>Key Advantages</h2>
+  <div class="advantages-grid">
+    <div class="adv-card">
+      <span class="adv-icon">🌿</span>
+      <div class="adv-title">Eco-Friendly</div>
+      <div>E0 Grade Certified</div>
     </div>
-    <div class="card-body">
-      <p class="card-title"><a href="/pages/products/pet-acoustic-panels.html">PET Acoustic Panels</a><span class="badge">Hot</span></p>
-      <p class="card-text">Recycled PET · NRC 0.8+</p>
+    <div class="adv-card">
+      <span class="adv-icon">🔇</span>
+      <div class="adv-title">Sound Insulation</div>
+      <div>NRC 0.8+ Rating</div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-media">
-      <img src="assets/product-wood.jpg" alt="Grille Slat Panels" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" width="1200" height="800">
+    <div class="adv-card">
+      <span class="adv-icon">⚡</span>
+      <div class="adv-title">Fast Installation</div>
+      <div>Save Time & Labor</div>
     </div>
-    <div class="card-body">
-      <p class="card-title"><a href="/pages/products/grille-slat-panels.html">Grille / Slat Panels</a></p>
-      <p class="card-text">Modern lines · Acoustic core</p>
+    <div class="adv-card">
+      <span class="adv-icon">🎨</span>
+      <div class="adv-title">Custom Design</div>
+      <div>Tailored Solutions</div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-media">
-      <img src="assets/product-pvc.jpg" alt="PVC Wall Panels" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" width="1200" height="800">
+    <div class="adv-card">
+      <span class="adv-icon">♻️</span>
+      <div class="adv-title">Sustainable</div>
+      <div>Recycled Materials</div>
     </div>
-    <div class="card-body">
-      <p class="card-title"><a href="/pages/products/pvc-wall-panels.html">PVC Wall Panels</a></p>
-      <p class="card-text">Waterproof · Fast install</p>
+    <div class="adv-card">
+      <span class="adv-icon">🏭</span>
+      <div class="adv-title">Factory Direct</div>
+      <div>Competitive Pricing</div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-media">
-      <img src="assets/product-3d.jpg" alt="Grille panel" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" width="1200" height="800">
+</section>
+
+<section>
+  <h2>Popular Products</h2>
+  <div class="grid-3">
+    <!-- 1. PET Acoustic -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <a href="/pages/products/pet-acoustic-panels.html">
+          <img src="assets/product-pet.jpg" alt="PET Acoustic Panels" class="product-img" loading="lazy">
+        </a>
+      </div>
+      <div class="product-content">
+        <h3 class="product-title"><a href="/pages/products/pet-acoustic-panels.html">PET Acoustic Panels</a></h3>
+        <p class="product-desc">High-performance sound absorption made from recycled materials.</p>
+        <a href="/pages/products/pet-acoustic-panels.html" class="product-link">View Details →</a>
+      </div>
     </div>
-    <div class="card-body">
-      <p class="card-title"><a href="/pages/products/3d-decorative-panels.html">Grille panel</a></p>
-      <p class="card-text">Hexagon · Geometric</p>
+    <!-- 2. Grille Slat -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <a href="/pages/products/grille-slat-panels.html">
+          <img src="assets/product-wood.jpg" alt="Grille Slat Panels" class="product-img" loading="lazy">
+        </a>
+      </div>
+      <div class="product-content">
+        <h3 class="product-title"><a href="/pages/products/grille-slat-panels.html">Grille / Slat Panels</a></h3>
+        <p class="product-desc">Modern wooden slat designs with acoustic backing.</p>
+        <a href="/pages/products/grille-slat-panels.html" class="product-link">View Details →</a>
+      </div>
+    </div>
+    <!-- 3. PVC Wall -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <a href="/pages/products/pvc-wall-panels.html">
+          <img src="assets/product-pvc.jpg" alt="PVC Wall Panels" class="product-img" loading="lazy">
+        </a>
+      </div>
+      <div class="product-content">
+        <h3 class="product-title"><a href="/pages/products/pvc-wall-panels.html">PVC Wall Panels</a></h3>
+        <p class="product-desc">Waterproof, durable, and easy to clean wall solutions.</p>
+        <a href="/pages/products/pvc-wall-panels.html" class="product-link">View Details →</a>
+      </div>
+    </div>
+    <!-- 4. 3D Decorative -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <a href="/pages/products/3d-decorative-panels.html">
+          <img src="assets/product-3d.jpg" alt="3D Decorative Panels" class="product-img" loading="lazy">
+        </a>
+      </div>
+      <div class="product-content">
+        <h3 class="product-title"><a href="/pages/products/3d-decorative-panels.html">3D Decorative Panels</a></h3>
+        <p class="product-desc">Add depth and texture with geometric 3D designs.</p>
+        <a href="/pages/products/3d-decorative-panels.html" class="product-link">View Details →</a>
+      </div>
+    </div>
+    <!-- 5. Carbon Crystal -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <a href="/pages/products/carbon-crystal-panels.html">
+          <img src="assets/product-carbon.jpg" alt="Carbon Crystal Panels" class="product-img" loading="lazy">
+        </a>
+      </div>
+      <div class="product-content">
+        <h3 class="product-title"><a href="/pages/products/carbon-crystal-panels.html">Carbon Crystal Panels</a></h3>
+        <p class="product-desc">Innovative, high-durability panels for modern spaces.</p>
+        <a href="/pages/products/carbon-crystal-panels.html" class="product-link">View Details →</a>
+      </div>
+    </div>
+    <!-- 6. Background Wall -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <a href="/pages/products/background-wall-panels.html">
+          <img src="assets/product-background.jpg" alt="Background Wall Panels" class="product-img" loading="lazy">
+        </a>
+      </div>
+      <div class="product-content">
+        <h3 class="product-title"><a href="/pages/products/background-wall-panels.html">Background Wall Panels</a></h3>
+        <p class="product-desc">Large format panels for stunning feature walls.</p>
+        <a href="/pages/products/background-wall-panels.html" class="product-link">View Details →</a>
+      </div>
     </div>
   </div>
-</div>
 </section>
+
 <section>
-<h2>2026 Trends: Hexagon & Slat Acoustic Panels for Modern Interiors</h2>
-<p>Highlight slat panels, hexagon patterns, integrated lighting, and recycled PET for sustainable design.</p>
+  <h2>Latest News & Insights</h2>
+  <div class="grid-3">
+    <!-- Blog 1 -->
+    <div class="blog-card">
+      <div class="blog-content">
+        <div class="blog-date">January 2026</div>
+        <h3 class="blog-title"><a href="/pages/blog/top-acoustic-wall-panel-trends-2026.html">Top Acoustic Wall Panel Trends for 2026</a></h3>
+        <p class="blog-excerpt">Discover why slat panels and hexagon designs are dominating interior design trends this year.</p>
+        <a href="/pages/blog/top-acoustic-wall-panel-trends-2026.html" class="read-more">Read Article</a>
+      </div>
+    </div>
+    <!-- Blog 2 -->
+    <div class="blog-card">
+      <div class="blog-content">
+        <div class="blog-date">January 2026</div>
+        <h3 class="blog-title"><a href="/pages/blog/eco-friendly-pet-acoustic-integrated-wall-panels.html">Eco-Friendly PET Acoustic Panels</a></h3>
+        <p class="blog-excerpt">How recycled PET materials are revolutionizing sustainable acoustic solutions.</p>
+        <a href="/pages/blog/eco-friendly-pet-acoustic-integrated-wall-panels.html" class="read-more">Read Article</a>
+      </div>
+    </div>
+    <!-- Blog 3 -->
+    <div class="blog-card">
+      <div class="blog-content">
+        <div class="blog-date">January 2026</div>
+        <h3 class="blog-title"><a href="/pages/blog/integrated-wall-panels-installation-guide.html">Integrated Wall Panels Installation Guide</a></h3>
+        <p class="blog-excerpt">Step-by-step guide to installing our wall panels for a professional finish.</p>
+        <a href="/pages/blog/integrated-wall-panels-installation-guide.html" class="read-more">Read Article</a>
+      </div>
+    </div>
+  </div>
 </section>
-<section>
-<h2>Trusted by Clients</h2>
-<div class="grid" style="grid-template-columns:repeat(6,minmax(0,1fr))">
-  <div class="card"><div class="card-media"></div></div>
-  <div class="card"><div class="card-media"></div></div>
-  <div class="card"><div class="card-media"></div></div>
-  <div class="card"><div class="card-media"></div></div>
-  <div class="card"><div class="card-media"></div></div>
-  <div class="card"><div class="card-media"></div></div>
-</div>
-</section>
-<section>
-<h2>Latest Blog/News</h2>
-<ul>
-<li><a href="/pages/blog/top-acoustic-wall-panel-trends-2026.html">Top Acoustic Wall Panel Trends for 2026: Slat & Hexagon Designs</a></li>
-</ul>
-</section>
+
 <div class="cta">
-<p>Quick quote: share contact and specifications to receive pricing and samples.</p>
-<p><a href="/pages/contact.html">Get Free Quote</a> · <a href="/pages/free-sample.html">Request Sample</a></p>
+  <p>Ready to transform your space? Contact us today for a free quote and samples.</p>
+  <p style="margin-top:15px"><a href="/pages/contact.html" class="btn primary">Get Free Quote</a> <a href="/pages/free-sample.html" class="btn" style="color:#333;border-color:#ccc">Request Sample</a></p>
 </div>
 </main>
 <footer>
