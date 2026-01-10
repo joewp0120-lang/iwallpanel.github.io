@@ -23,13 +23,67 @@
   .stats { display: flex; justify-content: space-around; background: #f9fafb; padding: 24px; border-radius: 12px; margin: 40px 0; }
   .stat-item { text-align: center; }
   .stat-num { font-size: 32px; font-weight: bold; color: #1e78ff; }
+  /* Standard Layout CSS */
+  :root{--bg:#0b1b2b;--primary:#0b5bd3;--text:#111;--muted:#6b7280;--card:#ffffff;--border:#e5e7eb}
+  header{padding:0;background:var(--bg);color:#fff}
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 24px}
+  .brand{font-weight:700;letter-spacing:.2px;font-size:1.2rem}
+  nav a{color:#cfe0ff;margin:0 10px;text-decoration:none;font-size:14px}
+  nav a:hover{color:#fff;text-decoration:underline}
+  footer{padding:24px;background:#f7f7f7;color:#333;text-align:center;margin-top:40px;border-top:1px solid #eee}
+  footer p{margin:8px 0;font-size:0.9rem;color:#666}
   /* Language Switcher */
-  #google_translate_element { position: absolute; top: 10px; right: 20px; z-index: 1000; }
-  .goog-te-gadget-simple { background-color: rgba(255,255,255,0.8) !important; border: 1px solid #ddd !important; padding: 4px !important; border-radius: 4px; }
+  .lang-select { margin-left: 20px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 6px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+  .lang-select option { color: #333; }
+  /* Hide Google Translate Banner */
+  body { top: 0 !important; }
+  .goog-te-banner-frame { display: none !important; }
+/* Footer Styles */
+footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family: 'Segoe UI', Roboto, Arial, sans-serif; text-align: left; border-top: none; margin-top: 0; }
+.footer-container { display: flex; justify-content: space-around; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; padding: 0 20px; }
+.footer-section { flex: 1; min-width: 250px; margin-bottom: 20px; padding: 0 15px; }
+.footer-section h3 { color: #fff; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #1e78ff; display: inline-block; padding-bottom: 5px; font-weight: 600; }
+.footer-section p { color: #ccc; font-size: 14px; line-height: 1.6; margin-bottom: 10px; margin-top: 0; }
+.footer-section ul { list-style: none; padding: 0; margin: 0; }
+.footer-section ul li { margin-bottom: 8px; }
+.footer-section ul li a { color: #ccc; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+.footer-section ul li a:hover { color: #fff; text-decoration: underline; }
+.footer-contact-item { display: flex; align-items: flex-start; margin-bottom: 10px; color: #ccc; font-size: 14px; }
+.footer-contact-item span { margin-right: 10px; font-size: 16px; }
+.copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding-top: 20px; font-size: 13px; color: #888; }
 </style>
 </head>
 <body>
-<div id="google_translate_element"></div>
+<header>
+<div class="topbar">
+  <div class="brand">SJSG decorative material Co., Ltd</div>
+  <div style="display:flex; align-items:center;">
+    <nav>
+    <a href="/index.html">Home</a>
+    <a href="/pages/products/index.html">Products</a>
+    <a href="/pages/applications/index.html">Applications</a>
+    <a href="/pages/projects/index.html">Projects</a>
+    <a href="/pages/blog/index.html">Blog/Resources</a>
+    <a href="/pages/certifications.html">Certifications</a>
+    <a href="/pages/about.html">About Us</a>
+    <a href="/pages/contact.html">Contact / Get Quote</a>
+    <a href="/pages/free-sample.html">Free Sample</a>
+    </nav>
+  <div id="google_translate_element" style="display:none"></div>
+  <select class="lang-select" onchange="translateLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी (Hindi)</option>
+    <option value="es">Español (Spanish)</option>
+    <option value="fr">Français (French)</option>
+    <option value="ar">العربية (Arabic)</option>
+    <option value="bn">বাংলা (Bengali)</option>
+    <option value="pt">Português (Portuguese)</option>
+    <option value="ru">Русский (Russian)</option>
+    <option value="ja">日本語 (Japanese)</option>
+  </select>
+  </div>
+</div>
+</header>
 <main>
 <h1>About SJSG decorative material Co., Ltd</h1>
 <img src="../assets/factory-overview.jpg" class="hero-img" alt="Factory Overview">
@@ -67,6 +121,43 @@
 <br>
 <a href="/index.html">← Back to Home</a>
 </main>
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>SJSG decorative material</h3>
+      <p>Professional wall panel manufacturer since 2015. Delivering eco-friendly, durable, and aesthetic solutions for global projects.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/products/index.html">Products</a></li>
+        <li><a href="/pages/applications/index.html">Applications</a></li>
+        <li><a href="/pages/projects/index.html">Projects</a></li>
+        <li><a href="/pages/blog/index.html">Blog</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Info</h3>
+      <div class="footer-contact-item">
+        <span>📍</span>
+        <p style="margin:0">Changping Jewelry Cultural Industrial Park, ShangKeng Village, Changping Town, Dongguan City, Guangdong Province. China</p>
+      </div>
+      <div class="footer-contact-item">
+        <span>📞</span>
+        <p style="margin:0">+86-15622516228</p>
+      </div>
+      <div class="footer-contact-item">
+        <span>✉️</span>
+        <p style="margin:0">Joewp0120@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 SJSG decorative material Co., Ltd. All rights reserved.
+  </div>
+</footer>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,10 +172,24 @@
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
-      includedLanguages: 'hi,es,fr,ar,bn,pt,ru,ja',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      includedLanguages: 'en,hi,es,fr,ar,bn,pt,ru,ja',
+      autoDisplay: false
     }, 'google_translate_element');
   }
+  
+  function translateLanguage(lang) {
+    document.cookie = "googtrans=/en/" + lang + "; path=/";
+    location.reload();
+  }
+
+  window.addEventListener('load', function() {
+    var match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+    if(match) {
+      var lang = match[1];
+      var sel = document.querySelector('.lang-select');
+      if(sel) sel.value = lang;
+    }
+  });
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>

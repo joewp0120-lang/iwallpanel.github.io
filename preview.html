@@ -6,12 +6,22 @@
 <title>SJSG decorative material Co., Ltd Preview | Acoustic & Decorative Panels</title>
 <meta name="description" content="Single-page preview with products, benefits, trends, customization, and factory direct shipping. English-only local preview.">
 <style>
-:root{--bg:#0b1b2b;--primary:#0b5bd3;--border:#e5e7eb;--muted:#6b7280}
+:root{--bg:#0b1b2b;--primary:#0b5bd3;--text:#111;--muted:#6b7280;--card:#ffffff;--border:#e5e7eb}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#111}
-header{padding:24px;background:var(--bg);color:#fff;position:sticky;top:0;z-index:10}
-.brand{display:flex;align-items:center;justify-content:space-between}
-.nav a{color:#cfe0ff;margin:0 8px;text-decoration:none;font-size:14px}
-.nav a:hover{color:#fff;text-decoration:underline}
+/* Standard Layout CSS */
+header{padding:0;background:var(--bg);color:#fff}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 24px}
+.brand{font-weight:700;letter-spacing:.2px;font-size:1.2rem}
+nav a{color:#cfe0ff;margin:0 10px;text-decoration:none;font-size:14px}
+nav a:hover{color:#fff;text-decoration:underline}
+footer{padding:24px;background:#f7f7f7;color:#333;text-align:center;margin-top:40px;border-top:1px solid #eee}
+footer p{margin:8px 0;font-size:0.9rem;color:#666}
+/* Language Switcher */
+.lang-select { margin-left: 20px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 6px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+.lang-select option { color: #333; }
+/* Hide Google Translate Banner */
+body { top: 0 !important; }
+.goog-te-banner-frame { display: none !important; }
 .hero{padding:32px 24px;background:linear-gradient(135deg,#0f2338 0%,#163a5b 60%,#0f2338 100%);color:#fff}
 .hero h1{margin:0 0 8px;font-size:30px}
 .hero p{margin:0;opacity:.9}
@@ -36,19 +46,34 @@ footer{padding:24px;background:#f7f7f7;color:#333;text-align:center}
 </head>
 <body>
 <header>
-  <div class="brand">
-    <div>SJSG decorative material Co., Ltd</div>
-    <nav class="nav">
-      <a href="#lighter">轻量与耐久</a>
-      <a href="#corrosion">沿海零锈蚀</a>
-      <a href="#fiber-grates">一体化格栅</a>
-      <a href="#customization">72小时定制</a>
-      <a href="#shipping">工厂直发</a>
+<div class="topbar">
+  <div class="brand">SJSG decorative material Co., Ltd</div>
+  <div style="display:flex; align-items:center;">
+    <nav>
+    <a href="/index.html">Home</a>
+    <a href="/pages/products/index.html">Products</a>
+    <a href="/pages/applications/index.html">Applications</a>
+    <a href="/pages/projects/index.html">Projects</a>
+    <a href="/pages/blog/index.html">Blog/Resources</a>
+    <a href="/pages/certifications.html">Certifications</a>
+    <a href="/pages/about.html">About Us</a>
+    <a href="/pages/contact.html">Contact / Get Quote</a>
+    <a href="/pages/free-sample.html">Free Sample</a>
     </nav>
+  <div id="google_translate_element" style="display:none"></div>
+  <select class="lang-select" onchange="translateLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी (Hindi)</option>
+    <option value="es">Español (Spanish)</option>
+    <option value="fr">Français (French)</option>
+    <option value="ar">العربية (Arabic)</option>
+    <option value="bn">বাংলা (Bengali)</option>
+    <option value="pt">Português (Portuguese)</option>
+    <option value="ru">Русский (Russian)</option>
+    <option value="ja">日本語 (Japanese)</option>
+  </select>
   </div>
-  <div class="toplinks">
-    <a href="index.html">返回首页</a>
-  </div>
+</div>
 </header>
 
 <div class="hero">
@@ -119,9 +144,65 @@ footer{padding:24px;background:#f7f7f7;color:#333;text-align:center}
 </main>
 
 <footer>
-  <p>© 2026 SJSG decorative material Co., Ltd</p>
-  <p>Address: Changping Jewelry Cultural Industrial Park, ShangKeng Village, Changping Town, Dongguan City, Guangdong Province. China, Zip code :523560</p>
-  <p>WhatsApp: 86-15622516228 | Email: Joewp0120@gmail.com</p>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>SJSG decorative material</h3>
+      <p>Professional wall panel manufacturer since 2015. Delivering eco-friendly, durable, and aesthetic solutions for global projects.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/products/index.html">Products</a></li>
+        <li><a href="/pages/applications/index.html">Applications</a></li>
+        <li><a href="/pages/projects/index.html">Projects</a></li>
+        <li><a href="/pages/blog/index.html">Blog</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Info</h3>
+      <div class="footer-contact-item">
+        <span>📍</span>
+        <p style="margin:0">Changping Jewelry Cultural Industrial Park, ShangKeng Village, Changping Town, Dongguan City, Guangdong Province. China</p>
+      </div>
+      <div class="footer-contact-item">
+        <span>📞</span>
+        <p style="margin:0">+86-15622516228</p>
+      </div>
+      <div class="footer-contact-item">
+        <span>✉️</span>
+        <p style="margin:0">Joewp0120@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 SJSG decorative material Co., Ltd. All rights reserved.
+  </div>
 </footer>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,es,fr,ar,bn,pt,ru,ja',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+  
+  function translateLanguage(lang) {
+    document.cookie = "googtrans=/en/" + lang + "; path=/";
+    location.reload();
+  }
+
+  window.addEventListener('load', function() {
+    var match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+    if(match) {
+      var lang = match[1];
+      var sel = document.querySelector('.lang-select');
+      if(sel) sel.value = lang;
+    }
+  });
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>
