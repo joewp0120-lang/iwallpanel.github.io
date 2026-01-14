@@ -25,6 +25,7 @@
   label { display: block; margin-bottom: 8px; font-weight: 500; }
   input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
   .sending { margin-top: 12px; color: #1e78ff; font-size: 14px; }
+  .hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
   /* Standard Layout CSS */
   :root{--bg:#0b1b2b;--primary:#0b5bd3;--text:#111;--muted:#6b7280;--card:#ffffff;--border:#e5e7eb}
   header{padding:0;background:var(--bg);color:#fff}
@@ -117,8 +118,13 @@
     <label>Notes</label>
     <textarea name="notes" rows="4" placeholder="Any color preferences or panel types?"></textarea>
   </div>
+  <div class="hp-field">
+    <label>Do not fill this field</label>
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+  </div>
   <input type="hidden" name="_subject" value="[iwallpanel] Free Sample Request">
   <input type="hidden" name="_next" value="/pages/thank-you.html?type=Free%20Sample&source=free-sample">
+  <input type="hidden" name="_load_time" id="sampleLoadTime" value="">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
   <button id="sampleSendBtn" type="button" class="btn">Order Sample Kit Now</button>
@@ -171,7 +177,14 @@
     var form = document.getElementById('sampleForm');
     if (!btn || !form) return;
     btn.addEventListener('click', function () {
-      var nextInputs = form.querySelector('input[name=\"_next\"]');
+      var honey = form.querySelector('input[name="_honey"]');
+      if (honey && honey.value) return;
+      var loadField = document.getElementById('sampleLoadTime');
+      if (loadField) {
+        var t = parseInt(loadField.value, 10) || 0;
+        if (t && Date.now() - t < 3000) return;
+      }
+      var nextInputs = form.querySelector('input[name="_next"]');
       var nextUrl = nextInputs ? nextInputs.value : '/pages/thank-you.html?type=Free%20Sample&source=free-sample';
       btn.disabled = true;
       btn.textContent = 'Sending...';
@@ -225,6 +238,8 @@
       var sel = document.querySelector('.lang-select');
       if(sel) sel.value = lang;
     }
+    var sampleTime = document.getElementById('sampleLoadTime');
+    if (sampleTime) sampleTime.value = Date.now().toString();
   });
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
