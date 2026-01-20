@@ -32,6 +32,12 @@ header{padding:0;background:var(--bg);color:#fff}
 .brand{font-weight:700;letter-spacing:.2px}
 nav a{color:#cfe0ff;margin:0 10px;text-decoration:none;font-size:14px}
 nav a:hover{color:#fff;text-decoration:underline}
+  /* Dropdown CSS */
+  .dropdown { position: relative; display: inline-block; }
+  .dropdown-content { display: none; position: absolute; background-color: var(--bg); min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; top: 100%; left: 0; padding: 8px 0; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+  .dropdown:hover .dropdown-content { display: block; }
+  .dropdown-content a { color: #cfe0ff; padding: 10px 16px; text-decoration: none; display: block; font-size: 14px; margin: 0; text-align: left; }
+  .dropdown-content a:hover { background-color: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
 .hero{padding:48px 24px;background:linear-gradient(135deg,#0f2338 0%,#163a5b 60%,#0f2338 100%);color:#fff}
 h1{margin:0 0 8px;font-size:32px}
 .sub{margin-top:8px;opacity:.9}
@@ -250,6 +256,16 @@ section a:hover{text-decoration:underline}
   .footer-contact-item span{margin-right:10px;font-size:16px}
   .copyright{text-align:center;border-top:1px solid rgba(255,255,255,0.1);margin-top:20px;padding-top:20px;font-size:13px;color:#888}
 
+  /* Dropdown Styles */
+  .dropdown{position:relative;display:inline-block}
+  .dropdown-content{display:none;position:absolute;background-color:#0b1b2b;min-width:220px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1000;border:1px solid rgba(255,255,255,0.1);border-radius:4px;top:100%;left:0}
+  .dropdown-content a{color:#cfe0ff;padding:12px 16px;text-decoration:none;display:block;margin:0;text-align:left;border-bottom:1px solid rgba(255,255,255,0.05)}
+  .dropdown-content a:last-child{border-bottom:none}
+  .dropdown-content a:hover{background-color:rgba(255,255,255,0.1);color:#fff;text-decoration:none}
+  .dropdown:hover .dropdown-content{display:block}
+  .dropdown-btn{color:#cfe0ff;margin:0 10px;text-decoration:none;font-size:14px;cursor:pointer;background:none;border:none;padding:0;font-family:inherit;display:inline-block}
+  .dropdown-btn:hover{color:#fff;text-decoration:underline}
+
 </style>
 <script type="application/ld+json">
 {
@@ -277,7 +293,17 @@ section a:hover{text-decoration:underline}
   <div style="display:flex; align-items:center;">
     <nav>
     <a href="/index.html">Home</a>
-    <a href="/pages/products/index.html">Products</a>
+    <div class="dropdown">
+      <a href="/pages/products/index.html" class="dropbtn">Products ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/products/pet-acoustic-panels.html">PET Acoustic Panels</a>
+        <a href="/pages/products/grille-slat-panels.html">Grille / Slat Panels</a>
+        <a href="/pages/products/pvc-wall-panels.html">PVC Wall Panels</a>
+        <a href="/pages/products/3d-decorative-panels.html">3D Decorative Panels</a>
+        <a href="/pages/products/carbon-crystal-panels.html">Carbon Crystal Panels</a>
+        <a href="/pages/products/background-wall-panels.html">Background Wall Panels</a>
+      </div>
+    </div>
     <a href="/pages/projects/index.html">Projects</a>
     <a href="/pages/blog/index.html">Blog/Resources</a>
     <a href="/pages/certifications.html">Certifications</a>
@@ -307,7 +333,7 @@ section a:hover{text-decoration:underline}
   WhatsApp: 86-15622516228 &nbsp;&nbsp;|&nbsp;&nbsp; Email: Joewp0120@gmail.com
 </div>
 <div class="actions">
-  <a class="btn primary" href="/pages/contact.html">Get Free Quote</a>
+  <a class="btn primary" href="/pages/contact.html">Contact Us</a>
   <a class="btn" href="/pages/free-sample.html">Request Sample</a>
 </div>
 </div>
@@ -468,7 +494,7 @@ section a:hover{text-decoration:underline}
 
 <div class="cta">
   <p>Ready to transform your space? Contact us today for a free quote and samples.</p>
-  <p style="margin-top:15px"><a href="/pages/contact.html" class="btn primary">Get Free Quote</a> <a href="/pages/free-sample.html" class="btn" style="color:#333;border-color:#ccc">Request Sample</a></p>
+  <p style="margin-top:15px"><a href="/pages/contact.html" class="btn primary">Contact Us</a> <a href="/pages/free-sample.html" class="btn" style="color:#333;border-color:#ccc">Request Sample</a></p>
 </div>
 </main>
 <footer>

@@ -11,7 +11,7 @@ gtag('config', 'AW-16664594260');
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Factory Direct Shipping & 1-Hour Quote</title>
+<title>Factory Direct Shipping & Contact</title>
 <meta name="description" content="Get quotes in 1 hour. Factory direct shipping worldwide. Cut out the middleman and save costs with WH iwallpanel.">
 <style>
   body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #333; }
@@ -33,6 +33,11 @@ gtag('config', 'AW-16664594260');
   .brand{font-weight:700;letter-spacing:.2px;font-size:1.2rem}
   nav a{color:#cfe0ff;margin:0 10px;text-decoration:none;font-size:14px}
   nav a:hover{color:#fff;text-decoration:underline}
+  .dropdown { position: relative; display: inline-block; }
+  .dropdown-content { display: none; position: absolute; background-color: var(--bg); min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; top: 100%; left: 0; padding: 8px 0; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+  .dropdown:hover .dropdown-content { display: block; }
+  .dropdown-content a { color: #cfe0ff; padding: 10px 16px; text-decoration: none; display: block; font-size: 14px; margin: 0; text-align: left; }
+  .dropdown-content a:hover { background-color: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
   footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe UI',Roboto,Arial,sans-serif;text-align:left;border-top:none;margin-top:0}
   .footer-container{display:flex;justify-content:space-around;max-width:1200px;margin:0 auto;flex-wrap:wrap;padding:0 20px}
   .footer-section{flex:1;min-width:250px;margin-bottom:20px;padding:0 15px}
@@ -60,7 +65,17 @@ gtag('config', 'AW-16664594260');
   <div style="display:flex; align-items:center;">
     <nav>
     <a href="/index.html">Home</a>
-    <a href="/pages/products/index.html">Products</a>
+    <div class="dropdown">
+      <a href="/pages/products/index.html" class="dropbtn">Products ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/products/pet-acoustic-panels.html">PET Acoustic Panels</a>
+        <a href="/pages/products/grille-slat-panels.html">Grille / Slat Panels</a>
+        <a href="/pages/products/pvc-wall-panels.html">PVC Wall Panels</a>
+        <a href="/pages/products/3d-decorative-panels.html">3D Decorative Panels</a>
+        <a href="/pages/products/carbon-crystal-panels.html">Carbon Crystal Panels</a>
+        <a href="/pages/products/background-wall-panels.html">Background Wall Panels</a>
+      </div>
+    </div>
     <a href="/pages/projects/index.html">Projects</a>
     <a href="/pages/blog/index.html">Blog/Resources</a>
     <a href="/pages/certifications.html">Certifications</a>
@@ -85,14 +100,14 @@ gtag('config', 'AW-16664594260');
 </div>
 </header>
 <main>
-<h1>Factory Direct Shipping & 1-Hour Quote</h1>
+<h1>Factory Direct Shipping & Contact</h1>
 <p class="intro">Efficiency at every step. We provide lightning-fast quotes and ship directly from our factory to your site, ensuring the best price and timeline.</p>
 
 <img src="../../assets/factory.svg" class="hero-img" alt="Global Shipping">
 
 <div class="features">
   <div class="feature-box">
-    <h3>1-Hour Quote</h3>
+    <h3>Contact Us</h3>
     <p>Fill out our simple form and receive a detailed quotation within one hour during business hours.</p>
   </div>
   <div class="feature-box">
@@ -134,11 +149,11 @@ gtag('config', 'AW-16664594260');
     <label>Notes</label>
     <textarea name="notes" rows="4" placeholder="Other requirements or questions"></textarea>
   </div>
-  <input type="hidden" name="_subject" value="[iwallpanel] Quote Request (1-Hour)">
-  <input type="hidden" name="_next" value="/pages/thank-you.html?type=Request%20Quote&source=quote-1hour">
+  <input type="hidden" name="_subject" value="[iwallpanel] Contact Request (1-Hour)">
+  <input type="hidden" name="_next" value="/pages/thank-you.html?type=Contact&source=quote-1hour">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
-  <button id="quoteSendBtn" type="button" class="btn">Get Your Quote Now</button>
+  <button id="quoteSendBtn" type="button" class="btn">Contact Us Now</button>
   <div id="quoteSendingHint" class="sending" style="display:none;">Sending your request...</div>
 </form>
 <br><br>

@@ -22,6 +22,11 @@ header{padding:0;background:var(--bg);color:#fff}
 .brand{font-weight:700;letter-spacing:.2px;font-size:1.2rem}
 nav a{color:#cfe0ff;margin:0 10px;text-decoration:none;font-size:14px}
 nav a:hover{color:#fff;text-decoration:underline}
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content { display: none; position: absolute; background-color: var(--bg); min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; top: 100%; left: 0; padding: 8px 0; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a { color: #cfe0ff; padding: 10px 16px; text-decoration: none; display: block; font-size: 14px; margin: 0; text-align: left; }
+.dropdown-content a:hover { background-color: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
   /* Footer Styles */
   footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe UI',Roboto,Arial,sans-serif;text-align:left;border-top:none;margin-top:0}
   .footer-container{display:flex;justify-content:space-around;max-width:1200px;margin:0 auto;flex-wrap:wrap;padding:0 20px}
@@ -71,7 +76,17 @@ ul{padding-left:18px;margin:8px 0}
   <div style="display:flex; align-items:center;">
     <nav>
     <a href="/index.html">Home</a>
-    <a href="/pages/products/index.html">Products</a>
+    <div class="dropdown">
+      <a href="/pages/products/index.html" class="dropbtn">Products ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/products/pet-acoustic-panels.html">PET Acoustic Panels</a>
+        <a href="/pages/products/grille-slat-panels.html">Grille / Slat Panels</a>
+        <a href="/pages/products/pvc-wall-panels.html">PVC Wall Panels</a>
+        <a href="/pages/products/3d-decorative-panels.html">3D Decorative Panels</a>
+        <a href="/pages/products/carbon-crystal-panels.html">Carbon Crystal Panels</a>
+        <a href="/pages/products/background-wall-panels.html">Background Wall Panels</a>
+      </div>
+    </div>
     <a href="/pages/projects/index.html">Projects</a>
     <a href="/pages/blog/index.html">Blog/Resources</a>
     <a href="/pages/certifications.html">Certifications</a>
@@ -149,7 +164,7 @@ ul{padding-left:18px;margin:8px 0}
   </section>
 
   <section id="shipping">
-    <h2>Factory Direct Shipping - Get Quote Within 1 Hour! <span class="badge">Direct</span></h2>
+    <h2>Factory Direct Shipping - Contact Within 1 Hour! <span class="badge">Direct</span></h2>
     <p>Direct manufacturing and shipping eliminate middlemen, delivering transparent pricing and reliable lead times. Submit specifications and receive a quote within 1 hour during business hours.</p>
     <ul>
       <li>Streamlined logistics from factory to site</li>
