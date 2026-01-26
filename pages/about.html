@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -64,6 +64,10 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
 .footer-contact-item span { margin-right: 10px; font-size: 16px; }
 .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding-top: 20px; font-size: 13px; color: #888; }
 </style>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="robots" content="noarchive">
 </head>
 <body>
 <header>
@@ -213,5 +217,18 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
   });
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+<script>
+// Disable right-click
+document.addEventListener('contextmenu', event => event.preventDefault());
+// Disable common developer keys
+document.onkeydown = function(e) {
+  if(e.keyCode == 123) { return false; } // F12
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+}
+</script>
 </body>
 </html>
+

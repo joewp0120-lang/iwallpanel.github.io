@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -65,6 +65,10 @@ gtag('config', 'AW-16664594260');
   body { top: 0 !important; }
   .goog-te-banner-frame { display: none !important; }
 </style>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="robots" content="noarchive">
 </head>
 <body>
 <header>
@@ -265,5 +269,18 @@ gtag('config', 'AW-16664594260');
   });
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+<script>
+// Disable right-click
+document.addEventListener('contextmenu', event => event.preventDefault());
+// Disable common developer keys
+document.onkeydown = function(e) {
+  if(e.keyCode == 123) { return false; } // F12
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+}
+</script>
 </body>
 </html>
+
