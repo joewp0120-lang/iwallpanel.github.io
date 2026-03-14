@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -31,6 +31,11 @@ gtag('config', 'AW-16664594260');
   .stats { display: flex; justify-content: space-around; background: #f9fafb; padding: 24px; border-radius: 12px; margin: 40px 0; }
   .stat-item { text-align: center; }
   .stat-num { font-size: 32px; font-weight: bold; color: #1e78ff; }
+  .video-container { max-width: 900px; margin: 0 auto 32px; }
+  .video-container video { width: 100%; height: auto; display: block; }
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; margin: 24px 0 40px; }
+  .cert-card { border: 1px solid #eee; padding: 24px; border-radius: 8px; text-align: center; background: #fff; }
+  .cert-card img { width: 100%; height: auto; border: 1px solid #ddd; }
   /* Standard Layout CSS */
   :root{--bg:#0b1b2b;--primary:#0b5bd3;--text:#111;--muted:#6b7280;--card:#ffffff;--border:#e5e7eb}
   header{padding:0;background:var(--bg);color:#fff}
@@ -88,8 +93,8 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
       </div>
     </div>
     <a href="/projects/">Projects</a>
-    <a href="/blog/">Blog/Resources</a>
-    <a href="/certifications/">Certifications</a>
+    <a href="/blog/">Blog/News</a>
+    
     <a href="/about/">About Us</a>
     <a href="/faq/">FAQ</a>
     <a href="/contact/">Contact</a>
@@ -114,7 +119,7 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
 <h1>About SJSG decorative material Co., Ltd</h1>
 <img src="/assets/factory-overview.jpg" class="hero-img" alt="Factory Overview">
 
-<div class="video-container" style="margin-bottom: 32px;">
+<div class="video-container">
   <h2>Factory Production Tour</h2>
   <video width="100%" controls style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     <source src="/assets/factory-production.mp4" type="video/mp4">
@@ -138,6 +143,27 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
   <div class="stat-item">
     <div class="stat-num">20k+</div>
     <div>Projects Completed</div>
+  </div>
+</div>
+
+<h2>Certifications & Standards</h2>
+<p>We adhere to strict international standards to ensure our products are safe, durable, and environmentally friendly.</p>
+<div class="cert-grid">
+  <div class="cert-card">
+    <img src="/assets/cert-1.jpg" alt="Certificate 1" loading="lazy" decoding="async">
+    <h3>Certificate / Patent</h3>
+  </div>
+  <div class="cert-card">
+    <img src="/assets/cert-2.jpg" alt="Certificate 2" loading="lazy" decoding="async">
+    <h3>Certificate / Patent</h3>
+  </div>
+  <div class="cert-card">
+    <img src="/assets/cert-3.jpg" alt="Certificate 3" loading="lazy" decoding="async">
+    <h3>Certificate / Patent</h3>
+  </div>
+  <div class="cert-card">
+    <img src="/assets/cert-4.jpg" alt="Certificate 4" loading="lazy" decoding="async">
+    <h3>Certificate / Patent</h3>
   </div>
 </div>
 
@@ -231,6 +257,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
