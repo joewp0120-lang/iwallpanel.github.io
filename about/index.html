@@ -31,7 +31,19 @@ gtag('config', 'AW-16664594260');
   .stats { display: flex; justify-content: space-around; background: #f9fafb; padding: 24px; border-radius: 12px; margin: 40px 0; }
   .stat-item { text-align: center; }
   .stat-num { font-size: 32px; font-weight: bold; color: #1e78ff; }
-  .video-container { max-width: 900px; margin: 0 auto 32px; }
+  .lp-hero { background: linear-gradient(135deg, #0f2338 0%, #163a5b 60%, #0f2338 100%); color: #fff; border-radius: 16px; padding: 40px 28px; margin-top: 8px; }
+  .lp-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; }
+  .lp-hero h1 { margin: 0 0 10px; font-size: 2.4rem; line-height: 1.15; }
+  .lp-hero p { margin: 0 0 14px; color: #cfe0ff; font-size: 1.05rem; }
+  .lp-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 22px; }
+  .lp-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); font-size: 0.95rem; color: #fff; }
+  .lp-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+  .lp-btn { display: inline-block; padding: 12px 16px; border-radius: 10px; text-decoration: none; font-weight: 700; border: 1px solid rgba(255,255,255,0.25); }
+  .lp-btn.primary { background: #1e78ff; border-color: #1e78ff; color: #fff; }
+  .lp-btn.secondary { background: rgba(255,255,255,0.10); color: #fff; }
+  .lp-hero-img { width: 100%; height: auto; border-radius: 14px; display: block; box-shadow: 0 12px 34px rgba(0,0,0,0.22); }
+  .lp-note { font-size: 0.95rem; color: rgba(207,224,255,0.9); margin-top: 12px; }
+  .video-container { max-width: 760px; margin: 0 auto 32px; }
   .video-container video { width: 100%; height: auto; display: block; }
   .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; margin: 24px 0 40px; }
   .cert-card { border: 1px solid #eee; padding: 24px; border-radius: 8px; text-align: center; background: #fff; }
@@ -98,7 +110,7 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
     <a href="/about/">About Us</a>
     <a href="/faq/">FAQ</a>
     <a href="/contact/">Contact</a>
-    <a href="/free-sample/">Free Sample</a>
+    
     </nav>
   <div id="google_translate_element" style="display:none"></div>
   <select class="lang-select" onchange="translateLanguage(this.value)">
@@ -116,8 +128,29 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
 </div>
 </header>
 <main>
-<h1>About SJSG decorative material Co., Ltd</h1>
-<img src="/assets/factory-overview.jpg" class="hero-img" alt="Factory Overview">
+<section class="lp-hero">
+  <div class="lp-hero-grid">
+    <div>
+      <h1>Factory-Direct Acoustic & Decorative Wall Panels</h1>
+      <p>SJSG decorative material Co., Ltd supports global projects with PET acoustic panels, grille/slat designs, PVC wall panels, and decorative solutions.</p>
+      <div class="lp-pills">
+        <span class="lp-pill">Factory Direct</span>
+        <span class="lp-pill">CAD Support</span>
+        <span class="lp-pill">Fast Quotation</span>
+        <span class="lp-pill">Global Shipping</span>
+      </div>
+      <div class="lp-cta">
+        <a class="lp-btn primary" href="/factory-direct-shipping-quote-1-hour/">TCO Calculator</a>
+        <a class="lp-btn secondary" href="/contact/">Send Inquiry</a>
+        <a class="lp-btn secondary" href="/products/">Browse Products</a>
+      </div>
+      <div class="lp-note">Need drawings or a project-specific installation recommendation? Share your plan via the inquiry form.</div>
+    </div>
+    <div>
+      <img src="/assets/factory-overview.jpg" class="lp-hero-img" alt="Factory Overview">
+    </div>
+  </div>
+</section>
 
 <div class="video-container">
   <h2>Factory Production Tour</h2>
@@ -257,6 +290,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
