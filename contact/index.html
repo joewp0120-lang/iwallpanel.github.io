@@ -360,7 +360,8 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
     if (!form) return;
     var btn = document.getElementById('b2bSubmit');
     var statusEl = document.getElementById('b2bStatus');
-    var endpoint = 'https://api.example.com/webhook';
+    var webhookEndpoint = 'https://api.example.com/webhook';
+    var emailEndpoint = 'https://formsubmit.co/joewp0120@gmail.com';
 
     function setStatus(text, kind) {
       if (!statusEl) return;
@@ -405,15 +406,6 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
       setStatus('Sending your quote request...', 'sending');
 
       var json = JSON.stringify(payload);
-      if (endpoint.indexOf('api.example.com/webhook') !== -1) {
-        setTimeout(function () {
-          setStatus('Quote request sent successfully.', 'ok');
-          form.reset();
-          setBusy(false);
-        }, 350);
-        return;
-      }
-
       var done = false;
       function markOk() {
         if (done) return;
@@ -427,31 +419,69 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
         setStatus('Failed to send. Please try again or use the contact form below.', 'err');
       }
 
-      fetch(endpoint, {
+      function sendEmailFallback() {
+        var fd = new FormData();
+        fd.append('intent', intent);
+        fd.append('area_sqm', String(area));
+        fd.append('target_port', port);
+        fd.append('email', email);
+        fd.append('page_url', payload.page_url);
+        fd.append('referrer', payload.referrer);
+        fd.append('ts', payload.ts);
+        fd.append('_subject', '[iwallpanel] Wholesale Container Quote Request');
+        fd.append('_captcha', 'false');
+        fd.append('_template', 'table');
+        return fetch(emailEndpoint, { method: 'POST', body: fd, keepalive: true, mode: 'no-cors' });
+      }
+
+      if (webhookEndpoint.indexOf('api.example.com/webhook') !== -1) {
+        sendEmailFallback().then(function () {
+          markOk();
+        }).catch(function () {
+          markErr();
+        }).finally(function () {
+          setBusy(false);
+        });
+        return;
+      }
+
+      var webhookOk = false;
+      fetch(webhookEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: json,
         keepalive: true
       }).then(function (res) {
         if (!res || !res.ok) throw new Error('bad_status');
+        webhookOk = true;
         markOk();
       }).catch(function () {
         try {
           if (navigator.sendBeacon) {
-            var ok = navigator.sendBeacon(endpoint, new Blob([json], { type: 'application/json' }));
+            var ok = navigator.sendBeacon(webhookEndpoint, new Blob([json], { type: 'application/json' }));
             if (ok) {
+              webhookOk = true;
               markOk();
               return;
             }
           }
         } catch (e) {}
-        return fetch(endpoint, { method: 'POST', mode: 'no-cors', body: json, keepalive: true }).then(function () {
+        return fetch(webhookEndpoint, { method: 'POST', mode: 'no-cors', body: json, keepalive: true }).then(function () {
+          webhookOk = true;
           markOk();
         });
-      }).catch(function () {
-        markErr();
       }).finally(function () {
-        setBusy(false);
+        if (webhookOk) {
+          setBusy(false);
+          return;
+        }
+        sendEmailFallback().then(function () {
+          markOk();
+        }).catch(function () {
+          markErr();
+        }).finally(function () {
+          setBusy(false);
+        });
       });
     });
   })();
