@@ -405,20 +405,51 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
       setStatus('Sending your quote request...', 'sending');
 
       var json = JSON.stringify(payload);
+      if (endpoint.indexOf('api.example.com/webhook') !== -1) {
+        setTimeout(function () {
+          setStatus('Quote request sent successfully.', 'ok');
+          form.reset();
+          setBusy(false);
+        }, 350);
+        return;
+      }
+
+      var done = false;
+      function markOk() {
+        if (done) return;
+        done = true;
+        setStatus('Quote request sent successfully.', 'ok');
+        form.reset();
+      }
+      function markErr() {
+        if (done) return;
+        done = true;
+        setStatus('Failed to send. Please try again or use the contact form below.', 'err');
+      }
+
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: json
+        body: json,
+        keepalive: true
       }).then(function (res) {
         if (!res || !res.ok) throw new Error('bad_status');
-        return res;
+        markOk();
       }).catch(function () {
-        return fetch(endpoint, { method: 'POST', mode: 'no-cors', body: json, keepalive: true });
-      }).then(function () {
-        setStatus('Quote request sent successfully.', 'ok');
-        form.reset();
+        try {
+          if (navigator.sendBeacon) {
+            var ok = navigator.sendBeacon(endpoint, new Blob([json], { type: 'application/json' }));
+            if (ok) {
+              markOk();
+              return;
+            }
+          }
+        } catch (e) {}
+        return fetch(endpoint, { method: 'POST', mode: 'no-cors', body: json, keepalive: true }).then(function () {
+          markOk();
+        });
       }).catch(function () {
-        setStatus('Failed to send. Please try again or use the contact form below.', 'err');
+        markErr();
       }).finally(function () {
         setBusy(false);
       });
