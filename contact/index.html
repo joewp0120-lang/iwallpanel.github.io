@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -34,6 +34,24 @@ gtag('config', 'AW-16664594260');
   .contact-info { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; }
   .sending { margin-top: 12px; color: #1e78ff; font-size: 14px; }
   .hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+  .b2b-quote{margin:18px 0 34px;padding:18px;border:1px solid #e5e7eb;border-radius:14px;background:linear-gradient(180deg,#f8fbff 0%,#ffffff 100%);box-shadow:0 10px 28px rgba(11,27,43,0.06)}
+  .b2b-quote-header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px}
+  .b2b-quote-title{margin:0;font-size:1.35rem;letter-spacing:-0.2px;color:#0b1b2b}
+  .b2b-quote-sub{margin:6px 0 0;color:#4b5563;font-size:0.95rem;line-height:1.5}
+  .b2b-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid #dbeafe;background:#eff6ff;color:#1d4ed8;padding:8px 10px;border-radius:999px;font-weight:700;font-size:0.85rem;white-space:nowrap}
+  .b2b-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .b2b-grid .full{grid-column:1 / -1}
+  .b2b-actions{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
+  .b2b-btn{padding:12px 16px;border-radius:10px;border:1px solid #1e78ff;background:#1e78ff;color:#fff;font-weight:800;font-size:16px;cursor:pointer;transition:transform .08s ease, box-shadow .2s ease, background .2s ease}
+  .b2b-btn:hover{background:#0b5bd3;box-shadow:0 10px 22px rgba(30,120,255,0.22)}
+  .b2b-btn:active{transform:translateY(1px)}
+  .b2b-btn[disabled]{opacity:.65;cursor:not-allowed;box-shadow:none}
+  .b2b-note{color:#6b7280;font-size:0.9rem;margin:0}
+  .b2b-status{margin-top:10px;font-size:0.95rem}
+  .b2b-status.ok{color:#0f766e}
+  .b2b-status.err{color:#b91c1c}
+  .b2b-status.sending{color:#1e78ff}
+  @media (max-width: 720px){.b2b-grid{grid-template-columns:1fr}}
   /* Standard Layout CSS */
   :root{--bg:#0b1b2b;--primary:#0b5bd3;--text:#111;--muted:#6b7280;--card:#ffffff;--border:#e5e7eb}
   header{padding:0;background:var(--bg);color:#fff}
@@ -81,13 +99,7 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta name="robots" content="noarchive">
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "w1b3qhmzff");
-</script></head>
+</head>
 <body>
 <header>
 <div class="topbar">
@@ -132,6 +144,50 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
 <main>
 <h1>Contact Us</h1>
 <p>Fill out the form below to get a quote or request information. We typically respond within 1 hour during business hours.</p>
+
+<section class="b2b-quote" aria-labelledby="b2bQuoteTitle">
+  <div class="b2b-quote-header">
+    <div>
+      <h2 class="b2b-quote-title" id="b2bQuoteTitle">Get Wholesale Container Quote</h2>
+      <p class="b2b-quote-sub">For overseas B2B buyers, distributors, and wholesalers. Get a container-ready estimate with factory-direct terms.</p>
+    </div>
+    <div class="b2b-badge">B2B • Factory Direct</div>
+  </div>
+  <form id="b2bQuoteForm" novalidate>
+    <div class="b2b-grid">
+      <div class="form-group">
+        <label for="b2bIntent">Purchase Intent</label>
+        <select id="b2bIntent" name="intent" required>
+          <option value="" selected disabled>Select a product</option>
+          <option value="Integrated Wall Panel">Integrated Wall Panel</option>
+          <option value="WPC Grille Panel">WPC Grille Panel</option>
+          <option value="PVC Wall Panel">PVC Wall Panel</option>
+          <option value="PET Acoustic Panel">PET Acoustic Panel</option>
+          <option value="3D Decorative Panel">3D Decorative Panel</option>
+          <option value="Carbon Crystal Panel">Carbon Crystal Panel</option>
+          <option value="Background Wall Panel">Background Wall Panel</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="b2bArea">Estimated Purchase Area (㎡)</label>
+        <input id="b2bArea" name="area_sqm" type="number" inputmode="decimal" min="1" step="0.01" placeholder="e.g., 800" required>
+      </div>
+      <div class="form-group">
+        <label for="b2bPort">Target Port</label>
+        <input id="b2bPort" name="target_port" type="text" placeholder="e.g., Manzanillo (Mexico), Rotterdam, Jebel Ali" required>
+      </div>
+      <div class="form-group">
+        <label for="b2bEmail">Business Email</label>
+        <input id="b2bEmail" name="email" type="email" placeholder="your@company.com" required>
+      </div>
+      <div class="full b2b-actions">
+        <button id="b2bSubmit" class="b2b-btn" type="submit">Request Container Quote</button>
+        <p class="b2b-note">We reply with FOB/CIF options, packing details, and lead time.</p>
+      </div>
+    </div>
+    <div id="b2bStatus" class="b2b-status" role="status" aria-live="polite"></div>
+  </form>
+</section>
 
 <form id="contactForm" action="https://formsubmit.co/joewp0120@gmail.com" method="POST">
   <div class="form-group">
@@ -299,6 +355,77 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
   })();
 </script>
 <script>
+  (function () {
+    var form = document.getElementById('b2bQuoteForm');
+    if (!form) return;
+    var btn = document.getElementById('b2bSubmit');
+    var statusEl = document.getElementById('b2bStatus');
+    var endpoint = 'https://api.example.com/webhook';
+
+    function setStatus(text, kind) {
+      if (!statusEl) return;
+      statusEl.className = 'b2b-status' + (kind ? ' ' + kind : '');
+      statusEl.textContent = text || '';
+    }
+
+    function setBusy(isBusy) {
+      if (!btn) return;
+      btn.disabled = !!isBusy;
+      btn.textContent = isBusy ? 'Sending...' : 'Request Container Quote';
+    }
+
+    function isEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var intent = document.getElementById('b2bIntent') ? document.getElementById('b2bIntent').value.trim() : '';
+      var areaRaw = document.getElementById('b2bArea') ? document.getElementById('b2bArea').value : '';
+      var port = document.getElementById('b2bPort') ? document.getElementById('b2bPort').value.trim() : '';
+      var email = document.getElementById('b2bEmail') ? document.getElementById('b2bEmail').value.trim() : '';
+
+      var area = parseFloat(areaRaw);
+      if (!intent || !port || !email || !isFinite(area) || area <= 0 || !isEmail(email)) {
+        setStatus('Please complete all fields with valid information.', 'err');
+        return;
+      }
+
+      var payload = {
+        intent: intent,
+        area_sqm: area,
+        target_port: port,
+        email: email,
+        page_url: window.location.href,
+        referrer: document.referrer || '',
+        ts: new Date().toISOString()
+      };
+
+      setBusy(true);
+      setStatus('Sending your quote request...', 'sending');
+
+      var json = JSON.stringify(payload);
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: json
+      }).then(function (res) {
+        if (!res || !res.ok) throw new Error('bad_status');
+        return res;
+      }).catch(function () {
+        return fetch(endpoint, { method: 'POST', mode: 'no-cors', body: json, keepalive: true });
+      }).then(function () {
+        setStatus('Quote request sent successfully.', 'ok');
+        form.reset();
+      }).catch(function () {
+        setStatus('Failed to send. Please try again or use the contact form below.', 'err');
+      }).finally(function () {
+        setBusy(false);
+      });
+    });
+  })();
+</script>
+<script>
 // Disable right-click
 document.addEventListener('contextmenu', event => event.preventDefault());
 // Disable common developer keys
@@ -312,7 +439,6 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
-
 
 
 
