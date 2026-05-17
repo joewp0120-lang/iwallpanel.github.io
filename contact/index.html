@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact Us | SJSG decorative material Co., Ltd</title>
-<meta name="description" content="Get in touch for quotes, samples, and technical support. We respond within 1 hour during business hours.">
+<title>Wholesale WPC Wall Panel Supplier &amp; Manufacturer | Factory Direct</title>
+<meta name="description" content="Looking for a reliable WPC wall panel supplier? We offer factory-direct prices, OEM/ODM services, and stable global shipping backed by 15 years of logistics expertise. Get a quote!">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="Contact Us | SJSG decorative material Co., Ltd">
 <meta property="og:description" content="Get in touch for quotes, samples, and technical support. We respond within 1 hour during business hours.">
@@ -52,6 +52,11 @@ gtag('config', 'AW-16664594260');
   .b2b-status.ok{color:#0f766e}
   .b2b-status.err{color:#b91c1c}
   .b2b-status.sending{color:#1e78ff}
+  .supply-adv{margin:22px 0 26px;padding:18px;border-radius:14px;background:#071a2e;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 10px 24px rgba(7,26,46,0.22)}
+  .supply-adv h3{margin:0 0 8px;font-size:1.1rem;letter-spacing:-0.2px}
+  .supply-adv p{margin:0;color:rgba(255,255,255,0.86);font-size:0.98rem;line-height:1.65}
+  .supply-adv-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:12px;background:#1e78ff;color:#fff;text-decoration:none;font-weight:900;border:1px solid rgba(255,255,255,0.18);white-space:nowrap}
+  .supply-adv-cta:hover{background:#0b5bd3;text-decoration:none}
   .sticky-bottom-bar{display:none}
   .sticky-bottom-btn{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-height:48px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px}
   .sticky-bottom-btn.quote{background:#1e78ff;color:#fff}
@@ -117,6 +122,8 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
   .contact-info{border-top:0;margin-top:32px;padding-top:0}
   body{padding-bottom:84px}
   .sticky-bottom-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:12px;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #f0f0f0;box-shadow:0 -4px 12px rgba(0,0,0,0.08)}
+  .supply-adv{flex-direction:column;align-items:stretch}
+  .supply-adv-cta{width:100%}
 }
 </style>
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -166,7 +173,7 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
 </div>
 </header>
 <main>
-<h1>Contact Us</h1>
+<h1>Premium WPC Wall Panel Supplier for Global Projects</h1>
 <p>Fill out the form below to get a quote or request information. We typically respond within 1 hour during business hours.</p>
 
 <section class="b2b-quote" aria-labelledby="b2bQuoteTitle">
@@ -211,6 +218,14 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
     </div>
     <div id="b2bStatus" class="b2b-status" role="status" aria-live="polite"></div>
   </form>
+</section>
+
+<section class="supply-adv" aria-label="Supply Chain Advantage">
+  <div>
+    <h3>More Than a Manufacturer – Your Logistics Partner</h3>
+    <p>As a source factory, our team is backed by 15 years of shipping and freight forwarding expertise. We don’t only produce high-quality WPC wall panels—we also support stable, cost-effective CIF quotes to your destination port (e.g., Manzanillo), helping reduce customs clearance friction and shipment delay risks in cross-border sourcing.</p>
+  </div>
+  <a class="supply-adv-cta" href="#b2bQuoteTitle">Get Container Quote (FOB/CIF)</a>
 </section>
 
 <form id="contactForm" action="https://formsubmit.co/joewp0120@gmail.com" method="POST">
@@ -338,6 +353,34 @@ footer { background: #0b1b2b; color: #ffffff; padding: 40px 0 20px; font-family:
     }
     var contactTime = document.getElementById('contactLoadTime');
     if (contactTime) contactTime.value = Date.now().toString();
+
+    var params = new URLSearchParams(window.location.search || '');
+    var cta = (params.get('cta') || '').trim();
+    var intentParam = (params.get('intent') || '').trim();
+    var areaParam = (params.get('area_sqm') || '').trim();
+    var portParam = (params.get('target_port') || '').trim();
+    var emailParam = (params.get('email') || '').trim();
+
+    var b2bIntent = document.getElementById('b2bIntent');
+    if (b2bIntent && intentParam) {
+      var has = false;
+      for (var i = 0; i < b2bIntent.options.length; i++) {
+        if (b2bIntent.options[i].value === intentParam) { has = true; break; }
+      }
+      if (has) b2bIntent.value = intentParam;
+    }
+
+    var b2bArea = document.getElementById('b2bArea');
+    if (b2bArea && areaParam) b2bArea.value = areaParam;
+    var b2bPort = document.getElementById('b2bPort');
+    if (b2bPort && portParam) b2bPort.value = portParam;
+    var b2bEmail = document.getElementById('b2bEmail');
+    if (b2bEmail && emailParam) b2bEmail.value = emailParam;
+
+    if (cta === 'lead-magnet') {
+      var anchor = document.getElementById('b2bQuoteTitle');
+      if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>

@@ -37,7 +37,25 @@ nav a:hover{color:#fff;text-decoration:underline}
 .dropdown-content a { color: #cfe0ff; padding: 10px 16px; text-decoration: none; display: block; font-size: 14px; margin: 0; text-align: left; }
 .dropdown-content a:hover { background-color: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
 /* Article Layout */
-main{max-width:800px;margin:0 auto;padding:60px 24px}
+main{max-width:1120px;margin:0 auto;padding:60px 24px}
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
+.article-content{min-width:0}
+.related-core{position:sticky;top:16px}
+.related-core-title{margin:0 0 12px;font-size:1.05rem;color:var(--bg);letter-spacing:-0.2px}
+.related-core-list{display:flex;flex-direction:column;gap:12px}
+.related-core-card{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid #f0f0f0;border-radius:14px;background:linear-gradient(180deg,#fbfdff 0%,#ffffff 100%);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.related-core-img{width:72px;height:72px;border-radius:12px;object-fit:cover;flex:0 0 72px;border:1px solid #f0f0f0;background:#fff}
+.related-core-name{margin:0 0 6px;font-size:1rem;line-height:1.25}
+.related-core-name a{color:var(--bg);text-decoration:none;font-weight:800}
+.related-core-name a:hover{text-decoration:underline}
+.related-core-desc{margin:0;color:#4b5563;font-size:0.95rem;line-height:1.5}
+.about-company{margin-top:14px;padding:14px;border:1px solid #f0f0f0;border-radius:14px;background:linear-gradient(180deg,#fbfdff 0%,#ffffff 100%);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.about-company-title{margin:0 0 10px;font-size:1.05rem;color:var(--bg);letter-spacing:-0.2px}
+.about-company-text{margin:0 0 12px;color:#4b5563;font-size:0.95rem;line-height:1.65}
+.about-supply{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid rgba(11,91,211,0.16);background:rgba(11,91,211,0.04);border-radius:12px}
+.about-supply-icon{width:20px;height:20px;flex:0 0 20px;color:var(--primary)}
+.about-supply-icon svg{display:block;width:20px;height:20px;fill:currentColor}
+.about-supply-claim{margin:0;color:var(--bg);font-size:0.95rem;line-height:1.5;font-weight:800}
 h1{font-size:2.5rem;margin-bottom:16px;line-height:1.2}
 .meta{color:var(--muted);font-size:0.9rem;margin-bottom:40px;border-bottom:1px solid var(--border);padding-bottom:20px}
 h2{font-size:1.8rem;margin-top:40px;margin-bottom:20px;color:var(--bg)}
@@ -59,6 +77,12 @@ li{margin-bottom:12px;font-size:1.1rem}
 .cta-box { background: #f0f7ff; padding: 40px; border-radius: 12px; text-align: center; margin-top: 60px; border: 1px solid #eef2ff; }
 .btn { display: inline-block; background: var(--primary); color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 700; margin-top: 16px; transition: background 0.3s; }
 .btn:hover { background: #0041a3; }
+.lead-magnet{margin:28px 0;padding:18px;border:1px solid #f0f0f0;border-radius:14px;background:linear-gradient(180deg,#fbfdff 0%,#ffffff 100%);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.lead-magnet-kicker{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0b5bd3;background:rgba(11,91,211,0.08);border:1px solid rgba(11,91,211,0.18);padding:6px 10px;border-radius:999px}
+.lead-magnet-title{margin:12px 0 8px;font-size:1.2rem;color:#0b1b2b}
+.lead-magnet-text{margin:0 0 14px;color:#374151;font-size:1rem;line-height:1.65}
+.lead-magnet-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:10px;background:#1e78ff;color:#fff;text-decoration:none;font-weight:800;border:1px solid #1e78ff}
+.lead-magnet-btn:hover{background:#0b5bd3;border-color:#0b5bd3;text-decoration:none}
 /* Footer Styles */
 footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe UI',Roboto,Arial,sans-serif;text-align:left;border-top:none;margin-top:0}
 .footer-container{display:flex;justify-content:space-around;max-width:1200px;margin:0 auto;flex-wrap:wrap;padding:0 20px}
@@ -85,6 +109,9 @@ footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe U
   input, select, textarea{padding:12px}
   nav a{display:inline-flex;align-items:center;min-height:44px;padding:12px 10px;margin:0}
   .dropdown-content a{min-height:44px;padding:12px 16px}
+  .lead-magnet-btn{width:100%}
+  .article-layout{grid-template-columns:1fr;gap:18px}
+  .related-core{position:static}
 }
 </style>
 <script type="application/ld+json">
@@ -159,6 +186,8 @@ footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe U
 </header>
 
 <main>
+  <div class="article-layout">
+  <article class="article-content">
   <h1>Sourcing WPC Fluted Panels in 2026: Why iWallPanel is the Smarter Alternative to Unifloor for Middle East & Africa Projects</h1>
   <div class="meta">January 11, 2026 · Industry Analysis · 8 min read</div>
 
@@ -167,6 +196,13 @@ footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe U
   <p>In the global architectural market, finding a reliable supplier for WPC Fluted Panels is easy, but finding one that understands the brutal demands of the Middle East and Africa (MEA) region is another story.</p>
   
   <p>While many contractors and wholesalers start their search with industry giants like Unifloor, savvy project managers are increasingly pivoting to <strong>iWallPanel.com</strong>. Why? Because in regions where temperatures hit 50°C and humidity levels reach 90%, "standard" quality isn't enough.</p>
+
+  <div class="lead-magnet" role="region" aria-label="Request Samples & Quote">
+    <div class="lead-magnet-kicker">Factory Direct</div>
+    <h3 class="lead-magnet-title">Request Data Sheets, Samples &amp; a Container Estimate</h3>
+    <p class="lead-magnet-text">Need detailed technical data sheets or physical samples of our acoustic and WPC panels? Get a factory-direct container estimate today.</p>
+    <a class="lead-magnet-btn" href="/contact/?source=blog&cta=lead-magnet&intent=WPC%20Grille%20Panel#b2bQuoteTitle">Request Free Samples &amp; Quote</a>
+  </div>
 
   <h2>The MEA Challenge: Why "Standard" WPC Fails</h2>
   <p>In markets like Saudi Arabia, the UAE, Nigeria, and Kenya, WPC panels face three silent killers:</p>
@@ -235,14 +271,64 @@ footer{background:#0b1b2b;color:#ffffff;padding:40px 0 20px;font-family:'Segoe U
   <h2>Final Verdict: Why Make the Switch?</h2>
   <p>Unifloor offers variety, but iWallPanel offers reliability in extreme conditions. If your project is located in the Middle East or Africa, you cannot afford to gamble on material stability.</p>
 
-  <div class="cta-box">
-    <h3>Ready to compare the quality for yourself?</h3>
-    <p>Don't take our word for it. We want you to feel the difference in density and texture.</p>
-    <a href="/free-sample/" class="btn">Request Your Free WPC Sample Kit & 2026 MEA Price List</a>
+  <div class="lead-magnet" role="region" aria-label="Request Samples & Quote">
+    <div class="lead-magnet-kicker">Factory Direct</div>
+    <h3 class="lead-magnet-title">Request Data Sheets, Samples &amp; a Container Estimate</h3>
+    <p class="lead-magnet-text">Need detailed technical data sheets or physical samples of our acoustic and WPC panels? Get a factory-direct container estimate today.</p>
+    <a class="lead-magnet-btn" href="/contact/?source=blog&cta=lead-magnet&intent=WPC%20Grille%20Panel#b2bQuoteTitle">Request Free Samples &amp; Quote</a>
   </div>
 
   <br><br>
   <a href="/blog/">← Back to Blog</a>
+</article>
+
+<aside class="related-core" aria-labelledby="relatedCoreTitle">
+  <h2 class="related-core-title" id="relatedCoreTitle">Related Core Products</h2>
+  <div class="related-core-list" id="relatedCoreList">
+    <div class="related-core-card" data-core="wpc">
+      <img class="related-core-img" src="/assets/product-wood.jpg" alt="Wholesale WPC Wall Panels" loading="lazy" decoding="async" width="144" height="144">
+      <div>
+        <p class="related-core-name"><a href="/products/grille-slat-panels/">Wholesale WPC Wall Panels</a></p>
+        <p class="related-core-desc">WPC grille / slat wall panels with factory-direct terms for overseas buyers.</p>
+      </div>
+    </div>
+    <div class="related-core-card" data-core="acoustic">
+      <img class="related-core-img" src="/assets/product-pet.jpg" alt="Factory Direct Acoustic Panels" loading="lazy" decoding="async" width="144" height="144">
+      <div>
+        <p class="related-core-name"><a href="/products/pet-acoustic-panels/">Factory Direct Acoustic Panels</a></p>
+        <p class="related-core-desc">PET acoustic panels for distributors and projects. Request samples, data sheets, and container pricing.</p>
+      </div>
+    </div>
+  </div>
+  <section class="about-company" aria-label="About the Company">
+    <h2 class="about-company-title">About the Company</h2>
+    <p class="about-company-text">We manufacture composite and acoustic panels with stable production control, consistent batch color, and export-ready packaging for overseas distribution and project supply.</p>
+    <div class="about-supply" aria-label="Global Supply Chain">
+      <span class="about-supply-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M20 17.5a2.5 2.5 0 0 1-2.45 2h-.15a2.5 2.5 0 0 1-4.9 0H11a2.5 2.5 0 0 1-4.9 0H5.6A2.6 2.6 0 0 1 3 16.9V6.5A2.5 2.5 0 0 1 5.5 4h11A2.5 2.5 0 0 1 19 6.5V8h.6A2.4 2.4 0 0 1 22 10.4v4.5a2.6 2.6 0 0 1-2 2.6zM6.5 18.5a1.5 1.5 0 1 0 0-.01v.01zm8 0a1.5 1.5 0 1 0 0-.01v.01zM19 9v6.9a1.6 1.6 0 0 1-1.6 1.6h-.1a2.5 2.5 0 0 1 0-1H17.4A.6.6 0 0 0 18 16v-6a1 1 0 0 0-1-1zm-5 7.5a2.5 2.5 0 0 1 .1 1H11a2.5 2.5 0 0 1 .1-1zm-5.8 0a2.5 2.5 0 0 1 .1 1H5.6A1.6 1.6 0 0 1 4 15.9V6.5A1.5 1.5 0 0 1 5.5 5h11A1.5 1.5 0 0 1 18 6.5V9h-1V6.7a.7.7 0 0 0-.7-.7H5.7a.7.7 0 0 0-.7.7v8.8a1 1 0 0 0 1 1z"/></svg>
+      </span>
+      <p class="about-supply-claim">Backed by 15 years of international ocean freight expertise, we guarantee stable CIF deliveries and strictly prevent site delays for global contractors.</p>
+    </div>
+  </section>
+</aside>
+  </div>
+  <script>
+    (function () {
+      var list = document.getElementById('relatedCoreList');
+      if (!list) return;
+      var path = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
+      var prefer = 'acoustic';
+      if (path.indexOf('wpc') !== -1 || path.indexOf('fluted') !== -1 || path.indexOf('unifloor') !== -1) prefer = 'wpc';
+      else if (path.indexOf('integrated') !== -1) prefer = 'wpc';
+      var cards = Array.prototype.slice.call(list.querySelectorAll('[data-core]'));
+      cards.sort(function (a, b) {
+        var av = a.getAttribute('data-core') === prefer ? 0 : 1;
+        var bv = b.getAttribute('data-core') === prefer ? 0 : 1;
+        return av - bv;
+      });
+      cards.forEach(function (c) { list.appendChild(c); });
+    })();
+  </script>
 </main>
 
 <footer>
@@ -320,9 +406,6 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
-
-
-
 
 
 
